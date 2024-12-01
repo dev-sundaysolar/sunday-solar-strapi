@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_company_service_items",
+  "info": {
+    "displayName": "serviceItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subhead": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

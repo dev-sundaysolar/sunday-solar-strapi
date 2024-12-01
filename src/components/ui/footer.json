@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_ui_footers",
+  "info": {
+    "displayName": "footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "appLogo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "externalLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.nav-link"
+    },
+    "internalLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.nav-link"
+    },
+    "socialMedia": {
+      "displayName": "socialMedia",
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.social-media"
+    },
+    "copyrightText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

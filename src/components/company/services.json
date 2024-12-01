@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_company_services",
+  "info": {
+    "displayName": "services"
+  },
+  "options": {},
+  "attributes": {
+    "serviceItem": {
+      "displayName": "serviceItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "company.service-item"
+    }
+  }
+}

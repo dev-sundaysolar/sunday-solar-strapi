@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_ui_headers",
+  "info": {
+    "displayName": "Header",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "navLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.nav-link"
+    },
+    "appLogo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
+    }
+  }
+}

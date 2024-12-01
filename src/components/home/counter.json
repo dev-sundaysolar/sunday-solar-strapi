@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_home_counters",
+  "info": {
+    "displayName": "Counter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "counterItem": {
+      "displayName": "CounterItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "home.counter-item"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_concerns",
+  "info": {
+    "displayName": "concerns"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

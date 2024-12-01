@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_ui_nav_links",
+  "info": {
+    "displayName": "NavLink",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "listItem": {
+      "displayName": "ListItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.list-item"
+    }
+  }
+}

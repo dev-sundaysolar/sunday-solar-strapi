@@ -1,0 +1,75 @@
+{
+  "kind": "singleType",
+  "collectionName": "company_and_teams",
+  "info": {
+    "singularName": "company-and-team",
+    "pluralName": "company-and-teams",
+    "displayName": "Company And Team Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "intro": {
+      "displayName": "intro",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "company.intro"
+    },
+    "services": {
+      "displayName": "services",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "company.services"
+    },
+    "team": {
+      "displayName": "team",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "company.team"
+    },
+    "partners": {
+      "displayName": "partners",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "company.partners"
+    },
+    "faq": {
+      "displayName": "faq",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "company.faq"
+    }
+  }
+}

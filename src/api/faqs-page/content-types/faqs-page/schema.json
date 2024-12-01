@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "faqs_pages",
+  "info": {
+    "singularName": "faqs-page",
+    "pluralName": "faqs-pages",
+    "displayName": "Faqs Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pageTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "faqTopics": {
+      "displayName": "faqTopics",
+      "type": "component",
+      "repeatable": true,
+      "component": "faq.faq-topics",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_link_buttons",
+  "info": {
+    "displayName": "LinkButton",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "blue",
+        "yellow",
+        "backdrop"
+      ],
+      "default": "blue"
+    }
+  }
+}

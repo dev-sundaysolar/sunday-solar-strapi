@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_faq_faq_topics",
+  "info": {
+    "displayName": "faqTopics"
+  },
+  "options": {},
+  "attributes": {
+    "topic": {
+      "type": "string",
+      "unique": true
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    }
+  }
+}

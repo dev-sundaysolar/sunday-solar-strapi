@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_home_reviews",
+  "info": {
+    "displayName": "Review",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    }
+  }
+}

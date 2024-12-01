@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_home_intros",
+  "info": {
+    "displayName": "Intro",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading1": {
+      "type": "string",
+      "required": false
+    },
+    "hero": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heading2": {
+      "type": "string",
+      "required": false
+    },
+    "heading3": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "linkButton": {
+      "displayName": "LinkButton",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_home_partners",
+  "info": {
+    "displayName": "Partners",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading2": {
+      "type": "string",
+      "required": false
+    },
+    "showPartnersList": {
+      "type": "boolean",
+      "default": true
+    },
+    "list": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::partner.partner"
+    }
+  }
+}

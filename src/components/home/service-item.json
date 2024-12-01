@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_home_service_items",
+  "info": {
+    "displayName": "ServiceItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading3": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heading4": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_company_faqs",
+  "info": {
+    "displayName": "faq"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
