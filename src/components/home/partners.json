@@ -13,11 +13,6 @@
     "showPartnersList": {
       "type": "boolean",
       "default": true
-    },
-    "list": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::partner.partner"
     }
   }
 }

@@ -25,7 +25,8 @@
       }
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "heading2"
     },
     "content": {
       "type": "blocks",
@@ -34,6 +35,16 @@
           "localized": true
         }
       }
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.link-button"
     }
   }
 }

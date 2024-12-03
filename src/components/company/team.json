@@ -6,21 +6,27 @@
   },
   "options": {},
   "attributes": {
-    "title": {
+    "heading2": {
       "type": "string"
     },
     "description": {
       "type": "text"
     },
     "hero": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
     }
   }
 }

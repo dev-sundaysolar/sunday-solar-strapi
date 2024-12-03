@@ -1,12 +1,18 @@
 {
   "collectionName": "components_company_faqs",
   "info": {
-    "displayName": "faq"
+    "displayName": "faq",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
+    "heading2": {
       "type": "string"
+    },
+    "list": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
     }
   }
 }

@@ -1,12 +1,17 @@
 {
   "collectionName": "components_company_partners",
   "info": {
-    "displayName": "partners"
+    "displayName": "partners",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
+    "heading2": {
       "type": "string"
+    },
+    "showPartnersList": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

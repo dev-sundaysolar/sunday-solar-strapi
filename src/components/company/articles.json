@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_company_articles",
+  "info": {
+    "displayName": "articles"
+  },
+  "options": {},
+  "attributes": {
+    "list": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_company_interviews",
+  "info": {
+    "displayName": "interviews"
+  },
+  "options": {},
+  "attributes": {
+    "list": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::interview.interview"
+    }
+  }
+}

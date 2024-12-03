@@ -27,17 +27,6 @@
       },
       "component": "company.intro"
     },
-    "services": {
-      "displayName": "services",
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "company.services"
-    },
     "team": {
       "displayName": "team",
       "type": "component",
@@ -70,6 +59,28 @@
         }
       },
       "component": "company.faq"
+    },
+    "articles": {
+      "displayName": "articles",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "company.articles"
+    },
+    "interviews": {
+      "displayName": "interviews",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "company.interviews"
     }
   }
 }
