@@ -30,7 +30,7 @@
     "socialMedia": {
       "displayName": "socialMedia",
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "ui.social-media"
     },
     "copyrightText": {
