@@ -1,7 +1,8 @@
 {
   "collectionName": "components_company_interviews",
   "info": {
-    "displayName": "interviews"
+    "displayName": "interviews",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,6 +10,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::interview.interview"
+    },
+    "heading2": {
+      "type": "string"
     }
   }
 }

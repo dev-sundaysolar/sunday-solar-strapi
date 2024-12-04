@@ -1,7 +1,8 @@
 {
   "collectionName": "components_company_articles",
   "info": {
-    "displayName": "articles"
+    "displayName": "articles",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,6 +10,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article"
+    },
+    "heading2": {
+      "type": "string"
     }
   }
 }
