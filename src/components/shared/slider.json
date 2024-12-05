@@ -7,11 +7,16 @@
   },
   "options": {},
   "attributes": {
-    "files": {
+    "cover": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heading2": {
+      "type": "string"
     }
   }
 }

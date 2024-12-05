@@ -9,7 +9,6 @@ export default factories.createCoreController(
   ({ strapi }) => ({
     // Query by slug
     async findOne(ctx) {
-      console.log("here");
       // thanks to the custom route we have now a slug variable
       // instead of the default id
       const { id: slug } = ctx.params;

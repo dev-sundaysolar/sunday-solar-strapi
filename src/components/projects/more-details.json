@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_projects_more_details",
+  "info": {
+    "displayName": "moreDetails"
+  },
+  "options": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

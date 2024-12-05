@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_projects_process_steps",
+  "info": {
+    "displayName": "processSteps"
+  },
+  "options": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "hero": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

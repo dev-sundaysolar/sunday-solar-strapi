@@ -64,6 +64,49 @@
       "type": "uid",
       "targetField": "heading3",
       "required": true
+    },
+    "moreDetails": {
+      "displayName": "moreDetails",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "projects.more-details"
+    },
+    "processSteps": {
+      "displayName": "processSteps",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "projects.process-steps"
+    },
+    "relatedProjects": {
+      "displayName": "relatedProjects",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "projects.related-projects"
+    },
+    "Faq": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.faq"
     }
   }
 }
