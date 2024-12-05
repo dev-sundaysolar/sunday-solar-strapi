@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_projects_partners",
+  "info": {
+    "displayName": "partners"
+  },
+  "options": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    },
+    "showPartnersList": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

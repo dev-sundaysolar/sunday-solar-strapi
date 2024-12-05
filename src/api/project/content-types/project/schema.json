@@ -16,27 +16,27 @@
     }
   },
   "attributes": {
-    "Title": {
+    "heading3": {
       "type": "string",
-      "required": true,
+      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "Description": {
-      "type": "string",
+    "description": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "Hero": {
+    "image": {
       "type": "media",
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
@@ -47,13 +47,22 @@
         }
       }
     },
-    "age": {
+    "date": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "integer",
+      "type": "date"
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "heading3",
       "required": true
     }
   }
