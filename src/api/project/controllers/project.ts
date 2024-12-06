@@ -13,7 +13,27 @@ export default factories.createCoreController(
       // instead of the default id
       const { id: slug } = ctx.params;
       const entity = await strapi.db.query("api::project.project").findOne({
-        where: { slug },
+        populate: {
+          moreDetails: {
+            populate: true,
+          },
+          processSteps: {
+            populate: true,
+          },
+          relatedProjects: {
+            select: ["heading2", "id"],
+            populate: {
+              list: {
+                populate: ["heading2", "id", "description", "image"],
+              },
+            },
+          },
+          faq: {
+            populate: ["heading2", "list", "id"],
+          },
+          image: true,
+        },
+        where: { slug, locale: ctx.query?.locale ?? "de-DE" },
       });
       const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
 

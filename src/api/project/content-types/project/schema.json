@@ -98,7 +98,7 @@
       },
       "component": "projects.related-projects"
     },
-    "Faq": {
+    "faq": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
