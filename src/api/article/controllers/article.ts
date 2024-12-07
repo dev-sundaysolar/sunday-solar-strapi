@@ -3,19 +3,21 @@
  */
 
 import { factories } from "@strapi/strapi";
+import { findBySlug } from "../../../utils/findBySlug";
 
 export default factories.createCoreController(
   "api::article.article",
   ({ strapi }) => ({
-    // Query by slug
     async findOne(ctx) {
-      // thanks to the custom route we have now a slug variable
-      // instead of the default id
+      const sanitizedQueryParams = await this.sanitizeQuery(ctx);
       const { id: slug } = ctx.params;
-      const entity = await strapi.db.query("api::article.article").findOne({
-        where: { slug },
-      });
-      const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
+      const article = await findBySlug(
+        strapi,
+        "api::article.article",
+        slug,
+        sanitizedQueryParams
+      );
+      const sanitizedEntity = await this.sanitizeOutput(article, ctx);
 
       return this.transformResponse(sanitizedEntity);
     },

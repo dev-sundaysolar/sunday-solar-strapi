@@ -17,6 +17,10 @@
     },
     "heading2": {
       "type": "string"
+    },
+    "href": {
+      "type": "string",
+      "default": "/"
     }
   }
 }

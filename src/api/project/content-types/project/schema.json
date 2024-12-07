@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "heading3": {
+    "heading1": {
       "type": "string",
       "required": false,
       "pluginOptions": {
@@ -62,8 +62,8 @@
         }
       },
       "type": "uid",
-      "targetField": "heading3",
-      "required": true
+      "required": true,
+      "targetField": "heading1"
     },
     "moreDetails": {
       "displayName": "moreDetails",
