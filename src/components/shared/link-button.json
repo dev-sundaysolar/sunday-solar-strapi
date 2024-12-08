@@ -10,7 +10,8 @@
       "type": "string"
     },
     "href": {
-      "type": "string"
+      "type": "string",
+      "default": "/"
     },
     "variant": {
       "type": "enumeration",
