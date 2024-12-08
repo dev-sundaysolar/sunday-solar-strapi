@@ -3,11 +3,10 @@
  */
 
 import { factories } from "@strapi/strapi";
-import { ContentType } from "@strapi/types/dist/uid";
 import { populateCollection } from "../../../utils/populateCollection";
 
 export default factories.createCoreController(
-  "api::projects-page.projects-page" as ContentType,
+  "api::projects-page.projects-page",
   ({ strapi }) => ({
     // Override the `find` method
     async find(ctx) {

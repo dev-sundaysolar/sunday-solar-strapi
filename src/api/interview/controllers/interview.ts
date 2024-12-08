@@ -3,18 +3,17 @@
  */
 
 import { factories } from "@strapi/strapi";
-import { ContentType } from "@strapi/types/dist/uid";
 import { findBySlug } from "../../../utils/findBySlug";
 
 export default factories.createCoreController(
-  "api::interview.interview" as ContentType,
+  "api::interview.interview",
   ({ strapi }) => ({
     async findOne(ctx) {
       const sanitizedQueryParams = await this.sanitizeQuery(ctx);
       const { id: slug } = ctx.params;
       const interview = await findBySlug(
         strapi,
-        "api::interview.interview" as ContentType,
+        "api::interview.interview",
         slug,
         sanitizedQueryParams
       );

@@ -1,114 +1,157 @@
-import type { Schema, Struct } from "@strapi/strapi";
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface CompanyFaq extends Struct.ComponentSchema {
-  collectionName: "components_company_faqs";
+export interface CompanyArticles extends Struct.ComponentSchema {
+  collectionName: 'components_company_articles';
   info: {
-    displayName: "faq";
+    description: '';
+    displayName: 'articles';
   };
   attributes: {
-    title: Schema.Attribute.String;
+    heading2: Schema.Attribute.String;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
+  };
+}
+
+export interface CompanyFaq extends Struct.ComponentSchema {
+  collectionName: 'components_company_faqs';
+  info: {
+    description: '';
+    displayName: 'faq';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+  };
+}
+
+export interface CompanyInterviews extends Struct.ComponentSchema {
+  collectionName: 'components_company_interviews';
+  info: {
+    description: '';
+    displayName: 'interviews';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::interview.interview'>;
   };
 }
 
 export interface CompanyIntro extends Struct.ComponentSchema {
-  collectionName: "components_company_intros";
+  collectionName: 'components_company_intros';
   info: {
-    description: "";
-    displayName: "intro";
+    description: '';
+    displayName: 'intro';
   };
   attributes: {
     description: Schema.Attribute.Text;
-    hero: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
-    title: Schema.Attribute.String;
+    heading1: Schema.Attribute.String;
+    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+  };
+}
+
+export interface CompanyLocations extends Struct.ComponentSchema {
+  collectionName: 'components_company_locations';
+  info: {
+    displayName: 'locations';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::location.location'>;
   };
 }
 
 export interface CompanyPartners extends Struct.ComponentSchema {
-  collectionName: "components_company_partners";
+  collectionName: 'components_company_partners';
   info: {
-    displayName: "partners";
+    description: '';
+    displayName: 'partners';
   };
   attributes: {
-    title: Schema.Attribute.String;
+    heading2: Schema.Attribute.String;
+    showPartnersList: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
   };
 }
 
 export interface CompanyServiceItem extends Struct.ComponentSchema {
-  collectionName: "components_company_service_items";
+  collectionName: 'components_company_service_items';
   info: {
-    displayName: "serviceItem";
+    description: '';
+    displayName: 'serviceItem';
   };
   attributes: {
     description: Schema.Attribute.Text;
+    heading3: Schema.Attribute.String;
     subhead: Schema.Attribute.String;
-    title: Schema.Attribute.String;
   };
 }
 
 export interface CompanyServices extends Struct.ComponentSchema {
-  collectionName: "components_company_services";
+  collectionName: 'components_company_services';
   info: {
-    displayName: "services";
+    displayName: 'services';
   };
   attributes: {
-    serviceItem: Schema.Attribute.Component<"company.service-item", true>;
+    serviceItem: Schema.Attribute.Component<'company.service-item', true>;
   };
 }
 
 export interface CompanyTeam extends Struct.ComponentSchema {
-  collectionName: "components_company_teams";
+  collectionName: 'components_company_teams';
   info: {
-    description: "";
-    displayName: "team";
+    description: '';
+    displayName: 'team';
   };
   attributes: {
     description: Schema.Attribute.Text;
-    hero: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
-    title: Schema.Attribute.String;
+    heading2: Schema.Attribute.String;
+    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
   };
 }
 
 export interface FaqFaqTopics extends Struct.ComponentSchema {
-  collectionName: "components_faq_faq_topics";
+  collectionName: 'components_faq_faq_topics';
   info: {
-    displayName: "faqTopics";
+    displayName: 'faqTopics';
   };
   attributes: {
-    faqs: Schema.Attribute.Relation<"oneToMany", "api::faq.faq">;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     topic: Schema.Attribute.String & Schema.Attribute.Unique;
   };
 }
 
 export interface HomeAboutUs extends Struct.ComponentSchema {
-  collectionName: "components_home_aboutuses";
+  collectionName: 'components_home_aboutuses';
   info: {
-    description: "";
-    displayName: "AboutUs";
+    description: '';
+    displayName: 'AboutUs';
   };
   attributes: {
     description: Schema.Attribute.Text;
     heading2: Schema.Attribute.String;
-    hero: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
-    linkButton: Schema.Attribute.Component<"shared.link-button", false>;
+    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
   };
 }
 
 export interface HomeCounter extends Struct.ComponentSchema {
-  collectionName: "components_home_counters";
+  collectionName: 'components_home_counters';
   info: {
-    description: "";
-    displayName: "Counter";
+    description: '';
+    displayName: 'Counter';
   };
   attributes: {
-    counterItem: Schema.Attribute.Component<"home.counter-item", true>;
+    counterItem: Schema.Attribute.Component<'home.counter-item', true>;
   };
 }
 
 export interface HomeCounterItem extends Struct.ComponentSchema {
-  collectionName: "components_home_counter_items";
+  collectionName: 'components_home_counter_items';
   info: {
-    description: "";
-    displayName: "CounterItem";
+    description: '';
+    displayName: 'CounterItem';
   };
   attributes: {
     count: Schema.Attribute.Integer;
@@ -117,37 +160,37 @@ export interface HomeCounterItem extends Struct.ComponentSchema {
 }
 
 export interface HomeFaq extends Struct.ComponentSchema {
-  collectionName: "components_home_faqs";
+  collectionName: 'components_home_faqs';
   info: {
-    description: "";
-    displayName: "FAQ";
+    description: '';
+    displayName: 'FAQ';
   };
   attributes: {
     heading2: Schema.Attribute.String;
-    list: Schema.Attribute.Relation<"oneToMany", "api::faq.faq">;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
   };
 }
 
 export interface HomeIntro extends Struct.ComponentSchema {
-  collectionName: "components_home_intros";
+  collectionName: 'components_home_intros';
   info: {
-    description: "";
-    displayName: "Intro";
+    description: '';
+    displayName: 'Intro';
   };
   attributes: {
     description: Schema.Attribute.Text;
     heading1: Schema.Attribute.String;
     heading2: Schema.Attribute.String;
     heading3: Schema.Attribute.String;
-    hero: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
-    linkButton: Schema.Attribute.Component<"shared.link-button", false>;
+    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
   };
 }
 
 export interface HomeMetadata extends Struct.ComponentSchema {
-  collectionName: "components_home_metadata";
+  collectionName: 'components_home_metadata';
   info: {
-    displayName: "Metadata";
+    displayName: 'Metadata';
   };
   attributes: {
     description: Schema.Attribute.Text;
@@ -156,51 +199,50 @@ export interface HomeMetadata extends Struct.ComponentSchema {
 }
 
 export interface HomeMoreDetials extends Struct.ComponentSchema {
-  collectionName: "components_home_more_detials";
+  collectionName: 'components_home_more_detials';
   info: {
-    description: "";
-    displayName: "MoreDetials";
+    description: '';
+    displayName: 'MoreDetails';
   };
   attributes: {
     description: Schema.Attribute.Text;
     heading2: Schema.Attribute.String;
-    hero: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
-    linkButton: Schema.Attribute.Component<"shared.link-button", false>;
+    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
   };
 }
 
 export interface HomePartnerItem extends Struct.ComponentSchema {
-  collectionName: "components_home_partner_items";
+  collectionName: 'components_home_partner_items';
   info: {
-    description: "";
-    displayName: "PartnerItem";
+    description: '';
+    displayName: 'PartnerItem';
   };
   attributes: {
-    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios"> &
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
 export interface HomePartners extends Struct.ComponentSchema {
-  collectionName: "components_home_partners";
+  collectionName: 'components_home_partners';
   info: {
-    description: "";
-    displayName: "Partners";
+    description: '';
+    displayName: 'Partners';
   };
   attributes: {
     heading2: Schema.Attribute.String;
-    list: Schema.Attribute.Relation<"oneToMany", "api::partner.partner">;
     showPartnersList: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<true>;
   };
 }
 
 export interface HomeReview extends Struct.ComponentSchema {
-  collectionName: "components_home_reviews";
+  collectionName: 'components_home_reviews';
   info: {
-    description: "";
-    displayName: "Review";
+    description: '';
+    displayName: 'Review';
   };
   attributes: {
     heading2: Schema.Attribute.String;
@@ -208,35 +250,93 @@ export interface HomeReview extends Struct.ComponentSchema {
 }
 
 export interface HomeServiceItem extends Struct.ComponentSchema {
-  collectionName: "components_home_service_items";
+  collectionName: 'components_home_service_items';
   info: {
-    description: "";
-    displayName: "ServiceItem";
+    description: '';
+    displayName: 'ServiceItem';
   };
   attributes: {
     description: Schema.Attribute.Text;
     heading3: Schema.Attribute.String;
     heading4: Schema.Attribute.String;
-    icon: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
 export interface HomeServices extends Struct.ComponentSchema {
-  collectionName: "components_home_services";
+  collectionName: 'components_home_services';
   info: {
-    description: "";
-    displayName: "Services";
+    description: '';
+    displayName: 'Services';
   };
   attributes: {
     heading2: Schema.Attribute.String;
-    serviceItem: Schema.Attribute.Component<"home.service-item", true>;
+    serviceItem: Schema.Attribute.Component<'home.service-item', true>;
+  };
+}
+
+export interface ProjectsMoreDetails extends Struct.ComponentSchema {
+  collectionName: 'components_projects_more_details';
+  info: {
+    displayName: 'moreDetails';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading2: Schema.Attribute.String;
+  };
+}
+
+export interface ProjectsPartners extends Struct.ComponentSchema {
+  collectionName: 'components_projects_partners';
+  info: {
+    displayName: 'partners';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    showPartnersList: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+  };
+}
+
+export interface ProjectsProcessSteps extends Struct.ComponentSchema {
+  collectionName: 'components_projects_process_steps';
+  info: {
+    displayName: 'processSteps';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading2: Schema.Attribute.String;
+    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ProjectsProjects extends Struct.ComponentSchema {
+  collectionName: 'components_projects_projects';
+  info: {
+    description: '';
+    displayName: 'projects';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
+  };
+}
+
+export interface ProjectsRelatedProjects extends Struct.ComponentSchema {
+  collectionName: 'components_projects_related_projects';
+  info: {
+    displayName: 'relatedProjects';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
   };
 }
 
 export interface SharedConcerns extends Struct.ComponentSchema {
-  collectionName: "components_shared_concerns";
+  collectionName: 'components_shared_concerns';
   info: {
-    displayName: "concerns";
+    displayName: 'concerns';
   };
   attributes: {
     description: Schema.Attribute.String & Schema.Attribute.Required;
@@ -245,10 +345,10 @@ export interface SharedConcerns extends Struct.ComponentSchema {
 }
 
 export interface SharedFaqItem extends Struct.ComponentSchema {
-  collectionName: "components_shared_faq_items";
+  collectionName: 'components_shared_faq_items';
   info: {
-    description: "";
-    displayName: "faqItem";
+    description: '';
+    displayName: 'faqItem';
   };
   attributes: {
     answer: Schema.Attribute.Text;
@@ -257,35 +357,37 @@ export interface SharedFaqItem extends Struct.ComponentSchema {
 }
 
 export interface SharedLinkButton extends Struct.ComponentSchema {
-  collectionName: "components_shared_link_buttons";
+  collectionName: 'components_shared_link_buttons';
   info: {
-    description: "";
-    displayName: "LinkButton";
+    description: '';
+    displayName: 'LinkButton';
   };
   attributes: {
-    href: Schema.Attribute.String;
+    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
     text: Schema.Attribute.String;
-    variant: Schema.Attribute.Enumeration<["blue", "yellow", "backdrop"]> &
-      Schema.Attribute.DefaultTo<"blue">;
+    variant: Schema.Attribute.Enumeration<
+      ['blue', 'yellow', 'backdrop', 'secondary']
+    > &
+      Schema.Attribute.DefaultTo<'blue'>;
   };
 }
 
 export interface SharedMedia extends Struct.ComponentSchema {
-  collectionName: "components_shared_media";
+  collectionName: 'components_shared_media';
   info: {
-    displayName: "Media";
-    icon: "file-video";
+    displayName: 'Media';
+    icon: 'file-video';
   };
   attributes: {
-    file: Schema.Attribute.Media<"images" | "files" | "videos">;
+    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
   };
 }
 
 export interface SharedQuote extends Struct.ComponentSchema {
-  collectionName: "components_shared_quotes";
+  collectionName: 'components_shared_quotes';
   info: {
-    displayName: "Quote";
-    icon: "indent";
+    displayName: 'Quote';
+    icon: 'indent';
   };
   attributes: {
     body: Schema.Attribute.Text;
@@ -294,11 +396,11 @@ export interface SharedQuote extends Struct.ComponentSchema {
 }
 
 export interface SharedRichText extends Struct.ComponentSchema {
-  collectionName: "components_shared_rich_texts";
+  collectionName: 'components_shared_rich_texts';
   info: {
-    description: "";
-    displayName: "Rich text";
-    icon: "align-justify";
+    description: '';
+    displayName: 'Rich text';
+    icon: 'align-justify';
   };
   attributes: {
     body: Schema.Attribute.RichText;
@@ -306,21 +408,23 @@ export interface SharedRichText extends Struct.ComponentSchema {
 }
 
 export interface SharedSlider extends Struct.ComponentSchema {
-  collectionName: "components_shared_sliders";
+  collectionName: 'components_shared_sliders';
   info: {
-    description: "";
-    displayName: "Slider";
-    icon: "address-book";
+    description: '';
+    displayName: 'Slider';
+    icon: 'address-book';
   };
   attributes: {
-    files: Schema.Attribute.Media<"images", true>;
+    cover: Schema.Attribute.Media<'images'>;
+    heading2: Schema.Attribute.String;
+    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
   };
 }
 
 export interface UiButton extends Struct.ComponentSchema {
-  collectionName: "components_ui_buttons";
+  collectionName: 'components_ui_buttons';
   info: {
-    displayName: "button";
+    displayName: 'button';
   };
   attributes: {
     href: Schema.Attribute.String;
@@ -329,38 +433,38 @@ export interface UiButton extends Struct.ComponentSchema {
 }
 
 export interface UiFooter extends Struct.ComponentSchema {
-  collectionName: "components_ui_footers";
+  collectionName: 'components_ui_footers';
   info: {
-    description: "";
-    displayName: "footer";
+    description: '';
+    displayName: 'footer';
   };
   attributes: {
-    appLogo: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    appLogo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     copyrightText: Schema.Attribute.String & Schema.Attribute.Required;
-    externalLink: Schema.Attribute.Component<"ui.nav-link", true>;
-    internalLink: Schema.Attribute.Component<"ui.nav-link", true>;
-    socialMedia: Schema.Attribute.Component<"ui.social-media", false>;
+    externalLink: Schema.Attribute.Component<'ui.nav-link', true>;
+    internalLink: Schema.Attribute.Component<'ui.nav-link', true>;
+    socialMedia: Schema.Attribute.Component<'ui.social-media', true>;
   };
 }
 
 export interface UiHeader extends Struct.ComponentSchema {
-  collectionName: "components_ui_headers";
+  collectionName: 'components_ui_headers';
   info: {
-    description: "";
-    displayName: "Header";
+    description: '';
+    displayName: 'Header';
   };
   attributes: {
-    appLogo: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
-    linkButton: Schema.Attribute.Component<"shared.link-button", false>;
-    navLink: Schema.Attribute.Component<"ui.nav-link", true>;
+    appLogo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    navLink: Schema.Attribute.Component<'ui.nav-link', true>;
   };
 }
 
 export interface UiListItem extends Struct.ComponentSchema {
-  collectionName: "components_ui_list_items";
+  collectionName: 'components_ui_list_items';
   info: {
-    description: "";
-    displayName: "ListItem";
+    description: '';
+    displayName: 'ListItem';
   };
   attributes: {
     href: Schema.Attribute.String & Schema.Attribute.Required;
@@ -369,67 +473,75 @@ export interface UiListItem extends Struct.ComponentSchema {
 }
 
 export interface UiNavLink extends Struct.ComponentSchema {
-  collectionName: "components_ui_nav_links";
+  collectionName: 'components_ui_nav_links';
   info: {
-    description: "";
-    displayName: "NavLink";
+    description: '';
+    displayName: 'NavLink';
   };
   attributes: {
     href: Schema.Attribute.String & Schema.Attribute.Required;
-    listItem: Schema.Attribute.Component<"ui.list-item", true>;
+    listItem: Schema.Attribute.Component<'ui.list-item', true>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
 export interface UiSocialMedia extends Struct.ComponentSchema {
-  collectionName: "components_ui_social_medias";
+  collectionName: 'components_ui_social_medias';
   info: {
-    description: "";
-    displayName: "socialMedia";
+    description: '';
+    displayName: 'socialMedia';
   };
   attributes: {
-    icon: Schema.Attribute.Media<"images" | "files" | "videos" | "audios"> &
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     link: Schema.Attribute.String & Schema.Attribute.Required;
     name: Schema.Attribute.String;
   };
 }
 
-declare module "@strapi/strapi" {
+declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      "company.faq": CompanyFaq;
-      "company.intro": CompanyIntro;
-      "company.partners": CompanyPartners;
-      "company.service-item": CompanyServiceItem;
-      "company.services": CompanyServices;
-      "company.team": CompanyTeam;
-      "faq.faq-topics": FaqFaqTopics;
-      "home.about-us": HomeAboutUs;
-      "home.counter": HomeCounter;
-      "home.counter-item": HomeCounterItem;
-      "home.faq": HomeFaq;
-      "home.intro": HomeIntro;
-      "home.metadata": HomeMetadata;
-      "home.more-detials": HomeMoreDetials;
-      "home.partner-item": HomePartnerItem;
-      "home.partners": HomePartners;
-      "home.review": HomeReview;
-      "home.service-item": HomeServiceItem;
-      "home.services": HomeServices;
-      "shared.concerns": SharedConcerns;
-      "shared.faq-item": SharedFaqItem;
-      "shared.link-button": SharedLinkButton;
-      "shared.media": SharedMedia;
-      "shared.quote": SharedQuote;
-      "shared.rich-text": SharedRichText;
-      "shared.slider": SharedSlider;
-      "ui.button": UiButton;
-      "ui.footer": UiFooter;
-      "ui.header": UiHeader;
-      "ui.list-item": UiListItem;
-      "ui.nav-link": UiNavLink;
-      "ui.social-media": UiSocialMedia;
+      'company.articles': CompanyArticles;
+      'company.faq': CompanyFaq;
+      'company.interviews': CompanyInterviews;
+      'company.intro': CompanyIntro;
+      'company.locations': CompanyLocations;
+      'company.partners': CompanyPartners;
+      'company.service-item': CompanyServiceItem;
+      'company.services': CompanyServices;
+      'company.team': CompanyTeam;
+      'faq.faq-topics': FaqFaqTopics;
+      'home.about-us': HomeAboutUs;
+      'home.counter': HomeCounter;
+      'home.counter-item': HomeCounterItem;
+      'home.faq': HomeFaq;
+      'home.intro': HomeIntro;
+      'home.metadata': HomeMetadata;
+      'home.more-detials': HomeMoreDetials;
+      'home.partner-item': HomePartnerItem;
+      'home.partners': HomePartners;
+      'home.review': HomeReview;
+      'home.service-item': HomeServiceItem;
+      'home.services': HomeServices;
+      'projects.more-details': ProjectsMoreDetails;
+      'projects.partners': ProjectsPartners;
+      'projects.process-steps': ProjectsProcessSteps;
+      'projects.projects': ProjectsProjects;
+      'projects.related-projects': ProjectsRelatedProjects;
+      'shared.concerns': SharedConcerns;
+      'shared.faq-item': SharedFaqItem;
+      'shared.link-button': SharedLinkButton;
+      'shared.media': SharedMedia;
+      'shared.quote': SharedQuote;
+      'shared.rich-text': SharedRichText;
+      'shared.slider': SharedSlider;
+      'ui.button': UiButton;
+      'ui.footer': UiFooter;
+      'ui.header': UiHeader;
+      'ui.list-item': UiListItem;
+      'ui.nav-link': UiNavLink;
+      'ui.social-media': UiSocialMedia;
     }
   }
 }
