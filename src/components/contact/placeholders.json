@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_contact_placeholders",
+  "info": {
+    "displayName": "placeholders"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}

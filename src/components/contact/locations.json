@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_contact_locations",
+  "info": {
+    "displayName": "locations"
+  },
+  "options": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    },
+    "list": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location"
+    }
+  }
+}

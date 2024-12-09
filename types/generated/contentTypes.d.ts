@@ -587,6 +587,56 @@ export interface ApiCompanyAndTeamCompanyAndTeam
   };
 }
 
+export interface ApiContactUsPageContactUsPage extends Struct.SingleTypeSchema {
+  collectionName: 'contact_us_pages';
+  info: {
+    description: '';
+    displayName: 'Contact Us Page';
+    pluralName: 'contact-us-pages';
+    singularName: 'contact-us-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Component<'contact.email', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    heading1: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-us-page.contact-us-page'
+    >;
+    locations: Schema.Attribute.Component<'contact.locations', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -1667,6 +1717,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::company-and-team.company-and-team': ApiCompanyAndTeamCompanyAndTeam;
+      'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
       'api::faq.faq': ApiFaqFaq;
       'api::faqs-page.faqs-page': ApiFaqsPageFaqsPage;
       'api::global.global': ApiGlobalGlobal;

@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "projects_pages",
+  "collectionName": "contact_us_pages",
   "info": {
-    "singularName": "projects-page",
-    "pluralName": "projects-pages",
-    "displayName": "Projects Page",
+    "singularName": "contact-us-page",
+    "pluralName": "contact-us-pages",
+    "displayName": "Contact Us Page",
     "description": ""
   },
   "options": {
@@ -16,8 +16,16 @@
     }
   },
   "attributes": {
-    "partners": {
-      "displayName": "partners",
+    "heading1": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "locations": {
+      "displayName": "locations",
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -25,10 +33,10 @@
           "localized": true
         }
       },
-      "component": "projects.partners"
+      "component": "contact.locations"
     },
-    "projects": {
-      "displayName": "projects",
+    "email": {
+      "displayName": "email",
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -36,17 +44,7 @@
           "localized": true
         }
       },
-      "component": "projects.projects"
-    },
-    "slider": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.slider"
+      "component": "contact.email"
     }
   }
 }

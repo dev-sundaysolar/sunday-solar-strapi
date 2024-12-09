@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_contact_emails",
+  "info": {
+    "displayName": "email"
+  },
+  "options": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    },
+    "placeholders": {
+      "displayName": "placeholders",
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.placeholders"
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
+    }
+  }
+}

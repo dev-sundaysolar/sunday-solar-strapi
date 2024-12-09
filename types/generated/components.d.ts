@@ -111,6 +111,40 @@ export interface CompanyTeam extends Struct.ComponentSchema {
   };
 }
 
+export interface ContactEmail extends Struct.ComponentSchema {
+  collectionName: 'components_contact_emails';
+  info: {
+    displayName: 'email';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    placeholders: Schema.Attribute.Component<'contact.placeholders', false>;
+  };
+}
+
+export interface ContactLocations extends Struct.ComponentSchema {
+  collectionName: 'components_contact_locations';
+  info: {
+    displayName: 'locations';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::location.location'>;
+  };
+}
+
+export interface ContactPlaceholders extends Struct.ComponentSchema {
+  collectionName: 'components_contact_placeholders';
+  info: {
+    displayName: 'placeholders';
+  };
+  attributes: {
+    content: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+  };
+}
+
 export interface FaqFaqTopics extends Struct.ComponentSchema {
   collectionName: 'components_faq_faq_topics';
   info: {
@@ -511,6 +545,9 @@ declare module '@strapi/strapi' {
       'company.service-item': CompanyServiceItem;
       'company.services': CompanyServices;
       'company.team': CompanyTeam;
+      'contact.email': ContactEmail;
+      'contact.locations': ContactLocations;
+      'contact.placeholders': ContactPlaceholders;
       'faq.faq-topics': FaqFaqTopics;
       'home.about-us': HomeAboutUs;
       'home.counter': HomeCounter;
