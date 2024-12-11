@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_b2_b_b2b_service_items",
+  "info": {
+    "displayName": "b2bServiceItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading3": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

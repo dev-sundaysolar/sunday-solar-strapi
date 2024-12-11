@@ -1,5 +1,53 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface B2BB2BConfigurator extends Struct.ComponentSchema {
+  collectionName: 'components_b2_b_b2b_configurators';
+  info: {
+    displayName: 'b2bConfigurator';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading2: Schema.Attribute.String;
+  };
+}
+
+export interface B2BB2BServiceItem extends Struct.ComponentSchema {
+  collectionName: 'components_b2_b_b2b_service_items';
+  info: {
+    description: '';
+    displayName: 'b2bServiceItem';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading3: Schema.Attribute.String;
+  };
+}
+
+export interface B2BB2BServices extends Struct.ComponentSchema {
+  collectionName: 'components_b2_b_b2b_services';
+  info: {
+    displayName: 'b2bServices';
+  };
+  attributes: {
+    b2bServiceItem: Schema.Attribute.Component<'b2-b.b2b-service-item', true>;
+    heading2: Schema.Attribute.String;
+  };
+}
+
+export interface B2BIntro extends Struct.ComponentSchema {
+  collectionName: 'components_b2_b_intros';
+  info: {
+    description: '';
+    displayName: 'intro';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading1: Schema.Attribute.String;
+    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+  };
+}
+
 export interface CompanyArticles extends Struct.ComponentSchema {
   collectionName: 'components_company_articles';
   info: {
@@ -145,13 +193,25 @@ export interface ContactPlaceholders extends Struct.ComponentSchema {
   };
 }
 
+export interface FaqFaqTabs extends Struct.ComponentSchema {
+  collectionName: 'components_faq_faq_tabs';
+  info: {
+    displayName: 'faqTabs';
+  };
+  attributes: {
+    faqTopics: Schema.Attribute.Component<'faq.faq-topics', true>;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface FaqFaqTopics extends Struct.ComponentSchema {
   collectionName: 'components_faq_faq_topics';
   info: {
+    description: '';
     displayName: 'faqTopics';
   };
   attributes: {
-    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     topic: Schema.Attribute.String & Schema.Attribute.Unique;
   };
 }
@@ -305,6 +365,7 @@ export interface HomeServices extends Struct.ComponentSchema {
   };
   attributes: {
     heading2: Schema.Attribute.String;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
     serviceItem: Schema.Attribute.Component<'home.service-item', true>;
   };
 }
@@ -536,6 +597,10 @@ export interface UiSocialMedia extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'b2-b.b2b-configurator': B2BB2BConfigurator;
+      'b2-b.b2b-service-item': B2BB2BServiceItem;
+      'b2-b.b2b-services': B2BB2BServices;
+      'b2-b.intro': B2BIntro;
       'company.articles': CompanyArticles;
       'company.faq': CompanyFaq;
       'company.interviews': CompanyInterviews;
@@ -548,6 +613,7 @@ declare module '@strapi/strapi' {
       'contact.email': ContactEmail;
       'contact.locations': ContactLocations;
       'contact.placeholders': ContactPlaceholders;
+      'faq.faq-tabs': FaqFaqTabs;
       'faq.faq-topics': FaqFaqTopics;
       'home.about-us': HomeAboutUs;
       'home.counter': HomeCounter;

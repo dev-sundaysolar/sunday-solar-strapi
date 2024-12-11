@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_faq_faq_tabs",
+  "info": {
+    "displayName": "faqTabs"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "faqTopics": {
+      "type": "component",
+      "repeatable": true,
+      "component": "faq.faq-topics"
+    }
+  }
+}

@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "pageTitle": {
+    "heading1": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -24,16 +24,16 @@
         }
       }
     },
-    "faqTopics": {
-      "displayName": "faqTopics",
+    "faqTabs": {
+      "displayName": "faqTabs",
       "type": "component",
       "repeatable": true,
-      "component": "faq.faq-topics",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "faq.faq-tabs"
     }
   }
 }

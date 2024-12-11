@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_b2_b_b2b_services",
+  "info": {
+    "displayName": "b2bServices"
+  },
+  "options": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    },
+    "b2bServiceItem": {
+      "displayName": "b2bServiceItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "b2-b.b2b-service-item"
+    }
+  }
+}

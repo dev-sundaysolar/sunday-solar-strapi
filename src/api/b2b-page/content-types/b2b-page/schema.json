@@ -1,0 +1,83 @@
+{
+  "kind": "singleType",
+  "collectionName": "b2b_pages",
+  "info": {
+    "singularName": "b2b-page",
+    "pluralName": "b2b-pages",
+    "displayName": "B2B Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "intro": {
+      "displayName": "intro",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "b2-b.intro"
+    },
+    "b2bServices": {
+      "displayName": "b2bServices",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "b2-b.b2b-services"
+    },
+    "b2bConfigurator": {
+      "displayName": "b2bConfigurator",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "b2-b.b2b-configurator"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.partners"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.faq"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.services"
+    }
+  }
+}

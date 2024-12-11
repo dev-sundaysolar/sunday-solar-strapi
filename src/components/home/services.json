@@ -15,6 +15,11 @@
       "type": "component",
       "repeatable": true,
       "component": "home.service-item"
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
     }
   }
 }

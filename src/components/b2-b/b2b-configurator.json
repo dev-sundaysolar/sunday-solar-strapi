@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_b2_b_b2b_configurators",
+  "info": {
+    "displayName": "b2bConfigurator"
+  },
+  "options": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
