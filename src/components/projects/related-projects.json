@@ -1,17 +1,22 @@
 {
   "collectionName": "components_projects_related_projects",
   "info": {
-    "displayName": "relatedProjects"
+    "displayName": "relatedProjects",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "list": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::project.project"
-    },
     "heading2": {
       "type": "string"
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
+    },
+    "showCarouselList": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

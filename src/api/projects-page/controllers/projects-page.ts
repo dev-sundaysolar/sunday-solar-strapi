@@ -11,6 +11,7 @@ export default factories.createCoreController(
     // Override the `find` method
     async find(ctx) {
       const { query } = ctx;
+      const sanitizedQueryParams = await this.sanitizeQuery(ctx);
 
       // Use the default service to fetch data
       const entity = await strapi
@@ -22,7 +23,8 @@ export default factories.createCoreController(
         "api::partner.partner",
         "partners",
         "showPartnersList",
-        entity
+        entity,
+        sanitizedQueryParams
       );
     },
   })

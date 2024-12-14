@@ -6,9 +6,11 @@ export async function populateCollection(
   apiAddress: ContentType,
   entityFieldName: string,
   entityIsShowFieldName: string,
-  entity: any
+  entity: any,
+  sanitizedQueryParams: any
 ) {
   const collection = await strapi.documents(apiAddress).findMany({
+    ...sanitizedQueryParams,
     populate: "*",
     where: {
       publishedAt: {

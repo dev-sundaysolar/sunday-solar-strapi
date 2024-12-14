@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_contact_messages",
+  "info": {
+    "displayName": "messages"
+  },
+  "options": {},
+  "attributes": {
+    "success": {
+      "type": "string"
+    },
+    "failure": {
+      "type": "string"
+    }
+  }
+}

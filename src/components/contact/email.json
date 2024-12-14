@@ -1,7 +1,8 @@
 {
   "collectionName": "components_contact_emails",
   "info": {
-    "displayName": "email"
+    "displayName": "email",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -18,6 +19,12 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.link-button"
+    },
+    "messages": {
+      "displayName": "messages",
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.messages"
     }
   }
 }

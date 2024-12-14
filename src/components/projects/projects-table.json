@@ -1,12 +1,13 @@
 {
-  "collectionName": "components_shared_sliders",
+  "collectionName": "components_projects_projects_tables",
   "info": {
-    "displayName": "Slider",
-    "icon": "address-book",
-    "description": ""
+    "displayName": "projectsTable"
   },
   "options": {},
   "attributes": {
+    "heading2": {
+      "type": "string"
+    },
     "list": {
       "type": "relation",
       "relation": "oneToMany",

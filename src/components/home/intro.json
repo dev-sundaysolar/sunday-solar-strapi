@@ -38,6 +38,16 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.link-button"
+    },
+    "heading1Position": {
+      "type": "enumeration",
+      "enum": [
+        "top-left",
+        "top-right",
+        "bottom-left",
+        "bottom-right"
+      ],
+      "default": "top-left"
     }
   }
 }

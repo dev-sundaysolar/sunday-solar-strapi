@@ -17,9 +17,39 @@ export default factories.createCoreController(
         slug,
         sanitizedQueryParams
       );
-      const sanitizedEntity = await this.sanitizeOutput(project, ctx);
 
-      return this.transformResponse(sanitizedEntity);
+      const projectPageEntity = await strapi
+        .documents("api::projects-page.projects-page")
+        .findFirst({
+          ...sanitizedQueryParams,
+          populate: {
+            carousel: {
+              populate: {
+                list: {
+                  populate: ["carouselHero", "linkButton"],
+                },
+              },
+            },
+          },
+        });
+
+      const sanitizedEntity: Record<string, any> = await this.sanitizeOutput(
+        project,
+        ctx
+      );
+
+      const response = {
+        ...sanitizedEntity,
+        carousel: {
+          ...sanitizedEntity.carousel,
+          list:
+            projectPageEntity.carousel?.list.filter(
+              (item) => item.slug !== sanitizedEntity.slug
+            ) ?? [],
+        },
+      };
+
+      return this.transformResponse(response);
     },
   })
 );

@@ -162,11 +162,13 @@ export interface CompanyTeam extends Struct.ComponentSchema {
 export interface ContactEmail extends Struct.ComponentSchema {
   collectionName: 'components_contact_emails';
   info: {
+    description: '';
     displayName: 'email';
   };
   attributes: {
     heading2: Schema.Attribute.String;
     linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    messages: Schema.Attribute.Component<'contact.messages', false>;
     placeholders: Schema.Attribute.Component<'contact.placeholders', false>;
   };
 }
@@ -179,6 +181,17 @@ export interface ContactLocations extends Struct.ComponentSchema {
   attributes: {
     heading2: Schema.Attribute.String;
     list: Schema.Attribute.Relation<'oneToMany', 'api::location.location'>;
+  };
+}
+
+export interface ContactMessages extends Struct.ComponentSchema {
+  collectionName: 'components_contact_messages';
+  info: {
+    displayName: 'messages';
+  };
+  attributes: {
+    failure: Schema.Attribute.String;
+    success: Schema.Attribute.String;
   };
 }
 
@@ -274,6 +287,10 @@ export interface HomeIntro extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     heading1: Schema.Attribute.String;
+    heading1Position: Schema.Attribute.Enumeration<
+      ['top-left', 'top-right', 'bottom-left', 'bottom-right']
+    > &
+      Schema.Attribute.DefaultTo<'top-left'>;
     heading2: Schema.Attribute.String;
     heading3: Schema.Attribute.String;
     hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
@@ -417,14 +434,28 @@ export interface ProjectsProjects extends Struct.ComponentSchema {
   };
 }
 
-export interface ProjectsRelatedProjects extends Struct.ComponentSchema {
-  collectionName: 'components_projects_related_projects';
+export interface ProjectsProjectsTable extends Struct.ComponentSchema {
+  collectionName: 'components_projects_projects_tables';
   info: {
-    displayName: 'relatedProjects';
+    displayName: 'projectsTable';
   };
   attributes: {
     heading2: Schema.Attribute.String;
     list: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
+  };
+}
+
+export interface ProjectsRelatedProjects extends Struct.ComponentSchema {
+  collectionName: 'components_projects_related_projects';
+  info: {
+    description: '';
+    displayName: 'relatedProjects';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    showCarouselList: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
   };
 }
 
@@ -510,9 +541,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
     icon: 'address-book';
   };
   attributes: {
-    cover: Schema.Attribute.Media<'images'>;
-    heading2: Schema.Attribute.String;
-    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
   };
 }
 
@@ -550,6 +579,9 @@ export interface UiHeader extends Struct.ComponentSchema {
   };
   attributes: {
     appLogo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    lightAppLogo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     linkButton: Schema.Attribute.Component<'shared.link-button', false>;
     navLink: Schema.Attribute.Component<'ui.nav-link', true>;
   };
@@ -612,6 +644,7 @@ declare module '@strapi/strapi' {
       'company.team': CompanyTeam;
       'contact.email': ContactEmail;
       'contact.locations': ContactLocations;
+      'contact.messages': ContactMessages;
       'contact.placeholders': ContactPlaceholders;
       'faq.faq-tabs': FaqFaqTabs;
       'faq.faq-topics': FaqFaqTopics;
@@ -631,6 +664,7 @@ declare module '@strapi/strapi' {
       'projects.partners': ProjectsPartners;
       'projects.process-steps': ProjectsProcessSteps;
       'projects.projects': ProjectsProjects;
+      'projects.projects-table': ProjectsProjectsTable;
       'projects.related-projects': ProjectsRelatedProjects;
       'shared.concerns': SharedConcerns;
       'shared.faq-item': SharedFaqItem;

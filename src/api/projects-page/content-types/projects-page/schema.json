@@ -38,15 +38,26 @@
       },
       "component": "projects.projects"
     },
-    "slider": {
+    "carousel": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "component": "shared.slider"
+    },
+    "projectsTable": {
+      "displayName": "projectsTable",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "projects.projects-table"
     }
   }
 }
