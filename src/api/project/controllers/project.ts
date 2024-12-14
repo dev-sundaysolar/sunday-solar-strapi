@@ -42,10 +42,11 @@ export default factories.createCoreController(
         ...sanitizedEntity,
         carousel: {
           ...sanitizedEntity.carousel,
-          list:
-            projectPageEntity.carousel?.list.filter(
-              (item) => item.slug !== sanitizedEntity.slug
-            ) ?? [],
+          list: sanitizedEntity.carousel.showCarouselList
+            ? projectPageEntity.carousel?.list.filter(
+                (item) => item.slug !== sanitizedEntity.slug
+              ) ?? []
+            : null,
         },
       };
 

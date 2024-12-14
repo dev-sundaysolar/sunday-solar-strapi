@@ -78,6 +78,17 @@
         }
       },
       "component": "home.services"
+    },
+    "projects": {
+      "displayName": "projects",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "b2-b.projects"
     }
   }
 }

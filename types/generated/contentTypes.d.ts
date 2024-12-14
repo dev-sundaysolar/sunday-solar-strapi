@@ -539,6 +539,12 @@ export interface ApiB2BPageB2BPage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    projects: Schema.Attribute.Component<'b2-b.projects', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     services: Schema.Attribute.Component<'home.services', false> &
       Schema.Attribute.SetPluginOptions<{

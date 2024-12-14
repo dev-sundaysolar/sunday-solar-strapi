@@ -48,6 +48,17 @@ export interface B2BIntro extends Struct.ComponentSchema {
   };
 }
 
+export interface B2BProjects extends Struct.ComponentSchema {
+  collectionName: 'components_b2_b_projects';
+  info: {
+    displayName: 'projects';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
+  };
+}
+
 export interface CompanyArticles extends Struct.ComponentSchema {
   collectionName: 'components_company_articles';
   info: {
@@ -691,6 +702,7 @@ declare module '@strapi/strapi' {
       'b2-b.b2b-service-item': B2BB2BServiceItem;
       'b2-b.b2b-services': B2BB2BServices;
       'b2-b.intro': B2BIntro;
+      'b2-b.projects': B2BProjects;
       'company.articles': CompanyArticles;
       'company.faq': CompanyFaq;
       'company.interviews': CompanyInterviews;
