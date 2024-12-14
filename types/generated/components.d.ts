@@ -387,6 +387,64 @@ export interface HomeServices extends Struct.ComponentSchema {
   };
 }
 
+export interface ProductFaq extends Struct.ComponentSchema {
+  collectionName: 'components_product_faqs';
+  info: {
+    displayName: 'faq';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+  };
+}
+
+export interface ProductFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_product_features';
+  info: {
+    description: '';
+    displayName: 'features';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading2: Schema.Attribute.String;
+    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ProductInformation extends Struct.ComponentSchema {
+  collectionName: 'components_product_information';
+  info: {
+    displayName: 'information';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    list: Schema.Attribute.Component<'product.list', true>;
+  };
+}
+
+export interface ProductList extends Struct.ComponentSchema {
+  collectionName: 'components_product_lists';
+  info: {
+    displayName: 'list';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading3: Schema.Attribute.String;
+  };
+}
+
+export interface ProductProjects extends Struct.ComponentSchema {
+  collectionName: 'components_product_projects';
+  info: {
+    displayName: 'projects';
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    list: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
+  };
+}
+
 export interface ProjectsMoreDetails extends Struct.ComponentSchema {
   collectionName: 'components_projects_more_details';
   info: {
@@ -606,7 +664,7 @@ export interface UiNavLink extends Struct.ComponentSchema {
     displayName: 'NavLink';
   };
   attributes: {
-    href: Schema.Attribute.String & Schema.Attribute.Required;
+    href: Schema.Attribute.String;
     listItem: Schema.Attribute.Component<'ui.list-item', true>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -660,6 +718,11 @@ declare module '@strapi/strapi' {
       'home.review': HomeReview;
       'home.service-item': HomeServiceItem;
       'home.services': HomeServices;
+      'product.faq': ProductFaq;
+      'product.features': ProductFeatures;
+      'product.information': ProductInformation;
+      'product.list': ProductList;
+      'product.projects': ProductProjects;
       'projects.more-details': ProjectsMoreDetails;
       'projects.partners': ProjectsPartners;
       'projects.process-steps': ProjectsProcessSteps;
