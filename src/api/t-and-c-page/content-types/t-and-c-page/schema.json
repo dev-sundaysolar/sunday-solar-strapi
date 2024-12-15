@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "t_and_c_pages",
+  "info": {
+    "singularName": "t-and-c-page",
+    "pluralName": "t-and-c-pages",
+    "displayName": "T&C Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "heading1": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "blocks"
+    }
+  }
+}

@@ -25,6 +25,12 @@
       "type": "component",
       "repeatable": false,
       "component": "contact.messages"
+    },
+    "errorMessages": {
+      "displayName": "errorMessages",
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.error-messages"
     }
   }
 }

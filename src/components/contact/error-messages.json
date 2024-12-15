@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_contact_error_messages",
+  "info": {
+    "displayName": "errorMessages"
+  },
+  "options": {},
+  "attributes": {
+    "requiredEmail": {
+      "type": "string"
+    },
+    "wrongFormatEmail": {
+      "type": "string"
+    },
+    "requiredContent": {
+      "type": "string"
+    }
+  }
+}

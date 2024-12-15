@@ -177,10 +177,23 @@ export interface ContactEmail extends Struct.ComponentSchema {
     displayName: 'email';
   };
   attributes: {
+    errorMessages: Schema.Attribute.Component<'contact.error-messages', false>;
     heading2: Schema.Attribute.String;
     linkButton: Schema.Attribute.Component<'shared.link-button', false>;
     messages: Schema.Attribute.Component<'contact.messages', false>;
     placeholders: Schema.Attribute.Component<'contact.placeholders', false>;
+  };
+}
+
+export interface ContactErrorMessages extends Struct.ComponentSchema {
+  collectionName: 'components_contact_error_messages';
+  info: {
+    displayName: 'errorMessages';
+  };
+  attributes: {
+    requiredContent: Schema.Attribute.String;
+    requiredEmail: Schema.Attribute.String;
+    wrongFormatEmail: Schema.Attribute.String;
   };
 }
 
@@ -713,6 +726,7 @@ declare module '@strapi/strapi' {
       'company.services': CompanyServices;
       'company.team': CompanyTeam;
       'contact.email': ContactEmail;
+      'contact.error-messages': ContactErrorMessages;
       'contact.locations': ContactLocations;
       'contact.messages': ContactMessages;
       'contact.placeholders': ContactPlaceholders;
