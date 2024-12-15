@@ -1081,6 +1081,12 @@ export interface ApiLayoutLayout extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
+    cookieConsent: Schema.Attribute.Component<'ui.cookie-consent', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_ui_cookie_consents",
+  "info": {
+    "displayName": "cookieConsent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
+    }
+  }
+}

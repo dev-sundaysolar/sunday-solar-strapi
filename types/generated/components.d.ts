@@ -638,6 +638,19 @@ export interface UiButton extends Struct.ComponentSchema {
   };
 }
 
+export interface UiCookieConsent extends Struct.ComponentSchema {
+  collectionName: 'components_ui_cookie_consents';
+  info: {
+    description: '';
+    displayName: 'cookieConsent';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface UiFooter extends Struct.ComponentSchema {
   collectionName: 'components_ui_footers';
   info: {
@@ -763,6 +776,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.slider': SharedSlider;
       'ui.button': UiButton;
+      'ui.cookie-consent': UiCookieConsent;
       'ui.footer': UiFooter;
       'ui.header': UiHeader;
       'ui.list-item': UiListItem;
