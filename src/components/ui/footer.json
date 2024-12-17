@@ -6,17 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "appLogo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "externalLink": {
       "type": "component",
       "repeatable": true,

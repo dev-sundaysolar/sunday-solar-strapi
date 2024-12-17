@@ -658,7 +658,6 @@ export interface UiFooter extends Struct.ComponentSchema {
     displayName: 'footer';
   };
   attributes: {
-    appLogo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     copyrightText: Schema.Attribute.String & Schema.Attribute.Required;
     externalLink: Schema.Attribute.Component<'ui.nav-link', true>;
     internalLink: Schema.Attribute.Component<'ui.nav-link', true>;
@@ -673,10 +672,6 @@ export interface UiHeader extends Struct.ComponentSchema {
     displayName: 'Header';
   };
   attributes: {
-    appLogo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    lightAppLogo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
     linkButton: Schema.Attribute.Component<'shared.link-button', false>;
     navLink: Schema.Attribute.Component<'ui.nav-link', true>;
   };
