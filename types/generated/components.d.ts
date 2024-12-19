@@ -79,6 +79,7 @@ export interface CompanyFaq extends Struct.ComponentSchema {
   };
   attributes: {
     heading2: Schema.Attribute.String;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
     list: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
   };
 }
@@ -298,6 +299,7 @@ export interface HomeFaq extends Struct.ComponentSchema {
   };
   attributes: {
     heading2: Schema.Attribute.String;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
     list: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
   };
 }
@@ -414,10 +416,12 @@ export interface HomeServices extends Struct.ComponentSchema {
 export interface ProductFaq extends Struct.ComponentSchema {
   collectionName: 'components_product_faqs';
   info: {
+    description: '';
     displayName: 'faq';
   };
   attributes: {
     heading2: Schema.Attribute.String;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
     list: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
   };
 }

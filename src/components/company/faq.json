@@ -13,6 +13,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq.faq"
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
     }
   }
 }
