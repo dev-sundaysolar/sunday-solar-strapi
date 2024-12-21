@@ -40,7 +40,7 @@ jobs:
           chmod 600 private_key.pem
           mkdir -p ~/.ssh
           ssh-keyscan -H ${{ secrets.DEPLOY_SERVER_IP }} >> ~/.ssh/known_hosts
-          ssh -t -i private_key.pem ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER_IP }} <<EOF
+          ssh -t -o StrictHostKeyChecking=no -i private_key.pem ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER_IP }} <<EOF
           cd ~/projects/sunday-solar-strapi
           git pull origin main
           yarn install --frozen-lockfile
