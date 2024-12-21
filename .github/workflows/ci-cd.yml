@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Env Variables
-        run: echo ${{ vars }}
+        run: echo ${{ vars.APP_KEYS }} && echo ${{ vars.DATABASE_CLIENT }}
       # Step 1: Check out the code
       - name: Checkout Code
         uses: actions/checkout@v4
