@@ -11,8 +11,20 @@ jobs:
     environment: production
 
     steps:
-      - name: Env Variables
-        run: echo ${{ vars.APP_KEYS }} && echo ${{ vars.DATABASE_CLIENT }}
+      - name: Create env.txt with all environment variables
+        run: |
+          echo "Creating env.txt file with environment variables..."
+
+          # Create or overwrite the env.txt file
+          echo "Writing environment variables to env.txt"
+
+          # Append each environment variable to env.txt (excluding sensitive ones)
+          for var in $(printenv | grep -o '^[^=]\+'); do
+            echo "$var=$(printenv $var)" >> env.txt
+          done
+
+          # Optional: Display the contents of env.txt (only do this if safe)
+          cat env.txt
       # Step 1: Check out the code
       - name: Checkout Code
         uses: actions/checkout@v4
