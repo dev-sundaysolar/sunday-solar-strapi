@@ -1,0 +1,48 @@
+name: CI/CD Pipeline with Env Variables
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    environment: production
+
+    steps:
+      # Step 1: Check out the code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js (or other tools based on your project)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+
+      # Step 4: Build the project
+      - name: Build the Project
+        run: yarn build
+
+      # Step 5: Deploy to the Server
+      - name: Deploy to Server
+        env:
+          SERVER_IP: ${{ secrets.DEPLOY_SERVER_IP }}
+          SERVER_USER: ${{ secrets.DEPLOY_USER }}
+          PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        run: |
+          echo "${{ secrets.DEPLOY_PRIxVATE_KEY }}" > private_key.pem
+          chmod 600 private_key.pem
+          ssh -i private_key.pem ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER_IP }} <<EOF
+          cd ~/projects/sunday-solar-strapi
+          git pull origin main
+          yarn install --frozen-lockfile
+          yarn build
+          pm2 restart sunday-solar-strapi
+          EOF
+          rm private_key.pem
