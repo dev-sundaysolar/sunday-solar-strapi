@@ -17,7 +17,7 @@
       "repeatable": false,
       "component": "shared.link-button"
     },
-    "hero": {
+    "desktopHero": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -27,6 +27,16 @@
         "videos",
         "audios"
       ]
+    },
+    "mobileHero": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

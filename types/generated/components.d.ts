@@ -42,9 +42,14 @@ export interface B2BIntro extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    desktopHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     heading1: Schema.Attribute.String;
-    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    mobileHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
@@ -104,9 +109,14 @@ export interface CompanyIntro extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    desktopHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     heading1: Schema.Attribute.String;
-    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    mobileHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
@@ -165,9 +175,14 @@ export interface CompanyTeam extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    desktopHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     heading2: Schema.Attribute.String;
-    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    mobileHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
@@ -262,9 +277,14 @@ export interface HomeAboutUs extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    desktopHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     heading2: Schema.Attribute.String;
-    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    mobileHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
@@ -312,6 +332,9 @@ export interface HomeIntro extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    desktopHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     heading1: Schema.Attribute.String;
     heading1Position: Schema.Attribute.Enumeration<
       ['top-left', 'top-right', 'bottom-left', 'bottom-right']
@@ -319,8 +342,10 @@ export interface HomeIntro extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'top-left'>;
     heading2: Schema.Attribute.String;
     heading3: Schema.Attribute.String;
-    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    mobileHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
@@ -343,9 +368,14 @@ export interface HomeMoreDetials extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    desktopHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     heading2: Schema.Attribute.String;
-    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    mobileHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 

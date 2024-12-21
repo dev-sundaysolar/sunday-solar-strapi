@@ -10,7 +10,7 @@
       "type": "string",
       "required": false
     },
-    "hero": {
+    "desktopHero": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -48,6 +48,16 @@
         "bottom-right"
       ],
       "default": "top-left"
+    },
+    "mobileHero": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

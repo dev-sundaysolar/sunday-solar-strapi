@@ -11,6 +11,12 @@ export default {
         subject: `New Contact: ${result.email}`,
         text: `email: ${result.email} message: ${result.content}`,
       });
+      await strapi.plugins["email"].services.email.send({
+        to: result.email,
+        from: env("DEFAULT_FROM_EMAIL"),
+        subject: `Sunday Solar Support`,
+        text: `We receive your mail...`,
+      });
     } catch (err) {
       console.log(err);
     }
