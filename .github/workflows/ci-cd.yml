@@ -11,6 +11,8 @@ jobs:
     environment: production
 
     steps:
+      - name: Env Variables
+        run: echo ${{ vars }}
       # Step 1: Check out the code
       - name: Checkout Code
         uses: actions/checkout@v4
