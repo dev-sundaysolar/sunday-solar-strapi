@@ -101,6 +101,14 @@
       "type": "uid",
       "targetField": "heading1",
       "required": true
+    },
+    "shortDescription": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }

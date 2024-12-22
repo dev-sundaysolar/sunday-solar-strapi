@@ -1,17 +1,17 @@
 {
   "collectionName": "components_product_projects",
   "info": {
-    "displayName": "projects"
+    "displayName": "projects",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "heading2": {
       "type": "string"
     },
-    "list": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::project.project"
+    "showProductList": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

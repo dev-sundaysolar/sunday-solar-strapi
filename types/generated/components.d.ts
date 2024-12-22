@@ -514,11 +514,13 @@ export interface ProductList extends Struct.ComponentSchema {
 export interface ProductProjects extends Struct.ComponentSchema {
   collectionName: 'components_product_projects';
   info: {
+    description: '';
     displayName: 'projects';
   };
   attributes: {
     heading2: Schema.Attribute.String;
-    list: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
+    showProductList: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
   };
 }
 

@@ -17,9 +17,29 @@ export default factories.createCoreController(
         slug,
         sanitizedQueryParams
       );
-      const sanitizedEntity = await this.sanitizeOutput(interview, ctx);
 
-      return this.transformResponse(sanitizedEntity);
+      const productPageEntity = await strapi
+        .documents("api::product.product")
+        .findMany(sanitizedQueryParams);
+
+      const sanitizedEntity: Record<string, any> = await this.sanitizeOutput(
+        interview,
+        ctx
+      );
+
+      const response = {
+        ...sanitizedEntity,
+        productCards: {
+          ...sanitizedEntity?.productCards,
+          list: sanitizedEntity?.productCards?.showProductList
+            ? productPageEntity?.filter(
+                (item) => item.slug !== sanitizedEntity.slug
+              ) ?? []
+            : null,
+        },
+      };
+
+      return this.transformResponse(response);
     },
   })
 );
