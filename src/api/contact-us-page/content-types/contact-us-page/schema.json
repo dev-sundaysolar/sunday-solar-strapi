@@ -16,15 +16,7 @@
     }
   },
   "attributes": {
-    "heading1": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
-    },
-    "locations": {
+    "companyLocations": {
       "displayName": "locations",
       "type": "component",
       "repeatable": false,
@@ -35,7 +27,7 @@
       },
       "component": "contact.locations"
     },
-    "form": {
+    "contact": {
       "displayName": "email",
       "type": "component",
       "repeatable": false,
@@ -45,6 +37,17 @@
         }
       },
       "component": "contact.email"
+    },
+    "contactConfigurator": {
+      "displayName": "contactConfigurator",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "contact.contact-configurator"
     }
   }
 }

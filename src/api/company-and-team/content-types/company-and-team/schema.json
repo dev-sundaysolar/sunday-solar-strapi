@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "intro": {
+    "companyHero": {
       "displayName": "intro",
       "type": "component",
       "repeatable": false,
@@ -27,7 +27,7 @@
       },
       "component": "company.intro"
     },
-    "team": {
+    "companyTeamHero": {
       "displayName": "team",
       "type": "component",
       "repeatable": false,
@@ -38,7 +38,7 @@
       },
       "component": "company.team"
     },
-    "partners": {
+    "partner": {
       "displayName": "partners",
       "type": "component",
       "repeatable": false,
@@ -60,7 +60,7 @@
       },
       "component": "company.faq"
     },
-    "articles": {
+    "companyArticles": {
       "displayName": "articles",
       "type": "component",
       "repeatable": false,
@@ -71,7 +71,7 @@
       },
       "component": "company.articles"
     },
-    "interviews": {
+    "companyInterviews": {
       "displayName": "interviews",
       "type": "component",
       "repeatable": false,
@@ -82,7 +82,7 @@
       },
       "component": "company.interviews"
     },
-    "locations": {
+    "companyLocations": {
       "displayName": "locations",
       "type": "component",
       "repeatable": false,

@@ -23,7 +23,7 @@ export default factories.createCoreController(
         .findFirst({
           ...sanitizedQueryParams,
           populate: {
-            carousel: {
+            projectsHeroSlider: {
               populate: {
                 list: {
                   populate: ["carouselHero", "linkButton"],
@@ -41,9 +41,9 @@ export default factories.createCoreController(
       const response = {
         ...sanitizedEntity,
         carousel: {
-          ...sanitizedEntity.carousel,
-          list: sanitizedEntity.carousel.showCarouselList
-            ? projectPageEntity.carousel?.list.filter(
+          ...sanitizedEntity?.carousel,
+          list: sanitizedEntity?.carousel?.showCarouselList
+            ? projectPageEntity?.projectsHeroSlider?.list.filter(
                 (item) => item.slug !== sanitizedEntity.slug
               ) ?? []
             : null,

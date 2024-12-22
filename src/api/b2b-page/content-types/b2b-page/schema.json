@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "intro": {
+    "b2bHero": {
       "displayName": "intro",
       "type": "component",
       "repeatable": false,
@@ -49,7 +49,7 @@
       },
       "component": "b2-b.b2b-configurator"
     },
-    "partners": {
+    "partner": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -79,7 +79,7 @@
       },
       "component": "home.services"
     },
-    "projects": {
+    "b2bProjects": {
       "displayName": "projects",
       "type": "component",
       "repeatable": false,

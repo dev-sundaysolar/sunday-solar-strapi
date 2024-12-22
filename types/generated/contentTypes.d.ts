@@ -507,6 +507,18 @@ export interface ApiB2BPageB2BPage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    b2bHero: Schema.Attribute.Component<'b2-b.intro', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    b2bProjects: Schema.Attribute.Component<'b2-b.projects', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     b2bServices: Schema.Attribute.Component<'b2-b.b2b-services', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -522,24 +534,12 @@ export interface ApiB2BPageB2BPage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    intro: Schema.Attribute.Component<'b2-b.intro', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::b2b-page.b2b-page'
     >;
-    partners: Schema.Attribute.Component<'home.partners', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    projects: Schema.Attribute.Component<'b2-b.projects', false> &
+    partner: Schema.Attribute.Component<'home.partners', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -607,7 +607,31 @@ export interface ApiCompanyAndTeamCompanyAndTeam
     };
   };
   attributes: {
-    articles: Schema.Attribute.Component<'company.articles', false> &
+    companyArticles: Schema.Attribute.Component<'company.articles', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    companyHero: Schema.Attribute.Component<'company.intro', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    companyInterviews: Schema.Attribute.Component<'company.interviews', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    companyLocations: Schema.Attribute.Component<'company.locations', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    companyTeamHero: Schema.Attribute.Component<'company.team', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -622,42 +646,18 @@ export interface ApiCompanyAndTeamCompanyAndTeam
           localized: true;
         };
       }>;
-    interviews: Schema.Attribute.Component<'company.interviews', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    intro: Schema.Attribute.Component<'company.intro', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::company-and-team.company-and-team'
     >;
-    locations: Schema.Attribute.Component<'company.locations', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    partners: Schema.Attribute.Component<'company.partners', false> &
+    partner: Schema.Attribute.Component<'company.partners', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    team: Schema.Attribute.Component<'company.team', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -681,32 +681,35 @@ export interface ApiContactUsPageContactUsPage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
+    companyLocations: Schema.Attribute.Component<'contact.locations', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    contact: Schema.Attribute.Component<'contact.email', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    contactConfigurator: Schema.Attribute.Component<
+      'contact.contact-configurator',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    form: Schema.Attribute.Component<'contact.email', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    heading1: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::contact-us-page.contact-us-page'
     >;
-    locations: Schema.Attribute.Component<'contact.locations', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -889,18 +892,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    aboutUs: Schema.Attribute.Component<'home.about-us', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    counter: Schema.Attribute.Component<'home.counter', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -910,7 +901,31 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    intro: Schema.Attribute.Component<'home.intro', false> &
+    homeCompanyHero: Schema.Attribute.Component<'home.more-detials', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    homeHero: Schema.Attribute.Component<'home.intro', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    homeOffering: Schema.Attribute.Component<'home.home-offering', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    homeStats: Schema.Attribute.Component<'home.counter', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    homeTeamHero: Schema.Attribute.Component<'home.about-us', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -921,13 +936,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::home-page.home-page'
     >;
-    moreDetails: Schema.Attribute.Component<'home.more-detials', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    partners: Schema.Attribute.Component<'home.partners', false> &
+    partner: Schema.Attribute.Component<'home.partners', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1299,12 +1308,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    features: Schema.Attribute.Component<'product.features', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     heading1: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1317,18 +1320,24 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    information: Schema.Attribute.Component<'product.information', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::product.product'
     >;
-    projects: Schema.Attribute.Component<'product.projects', false> &
+    productBenefits: Schema.Attribute.Component<'product.information', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    productCards: Schema.Attribute.Component<'product.projects', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    productSplit: Schema.Attribute.Component<'product.features', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1518,12 +1527,6 @@ export interface ApiProjectsPageProjectsPage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    carousel: Schema.Attribute.Component<'shared.slider', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1532,13 +1535,19 @@ export interface ApiProjectsPageProjectsPage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::projects-page.projects-page'
     >;
-    partners: Schema.Attribute.Component<'projects.partners', false> &
+    partner: Schema.Attribute.Component<'projects.partners', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    projects: Schema.Attribute.Component<'projects.projects', false> &
+    projectCards: Schema.Attribute.Component<'projects.projects', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    projectsHeroSlider: Schema.Attribute.Component<'shared.slider', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

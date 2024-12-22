@@ -21,24 +21,6 @@
         "audios"
       ]
     },
-    "heading2": {
-      "type": "string",
-      "required": false
-    },
-    "heading3": {
-      "type": "string",
-      "required": false
-    },
-    "description": {
-      "type": "text",
-      "required": false
-    },
-    "linkButton": {
-      "displayName": "LinkButton",
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.link-button"
-    },
     "heading1Position": {
       "type": "enumeration",
       "enum": [
@@ -50,14 +32,15 @@
       "default": "top-left"
     },
     "mobileHero": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

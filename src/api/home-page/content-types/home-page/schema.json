@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "intro": {
+    "homeHero": {
       "displayName": "Intro",
       "type": "component",
       "repeatable": false,
@@ -27,7 +27,7 @@
         }
       }
     },
-    "counter": {
+    "homeStats": {
       "displayName": "Counter",
       "type": "component",
       "repeatable": false,
@@ -38,7 +38,7 @@
         }
       }
     },
-    "moreDetails": {
+    "homeCompanyHero": {
       "displayName": "MoreDetials",
       "type": "component",
       "repeatable": false,
@@ -82,7 +82,7 @@
         }
       }
     },
-    "aboutUs": {
+    "homeTeamHero": {
       "displayName": "AboutUs",
       "type": "component",
       "repeatable": false,
@@ -94,7 +94,7 @@
         }
       }
     },
-    "partners": {
+    "partner": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -103,6 +103,17 @@
         }
       },
       "component": "home.partners"
+    },
+    "homeOffering": {
+      "displayName": "homeOffering",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.home-offering"
     }
   }
 }

@@ -186,6 +186,16 @@ export interface CompanyTeam extends Struct.ComponentSchema {
   };
 }
 
+export interface ContactContactConfigurator extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_configurators';
+  info: {
+    displayName: 'contactConfigurator';
+  };
+  attributes: {
+    heading1: Schema.Attribute.String;
+  };
+}
+
 export interface ContactEmail extends Struct.ComponentSchema {
   collectionName: 'components_contact_emails';
   info: {
@@ -324,6 +334,19 @@ export interface HomeFaq extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeHomeOffering extends Struct.ComponentSchema {
+  collectionName: 'components_home_home_offerings';
+  info: {
+    displayName: 'homeOffering';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading2: Schema.Attribute.String;
+    heading3: Schema.Attribute.String;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+  };
+}
+
 export interface HomeIntro extends Struct.ComponentSchema {
   collectionName: 'components_home_intros';
   info: {
@@ -331,7 +354,6 @@ export interface HomeIntro extends Struct.ComponentSchema {
     displayName: 'Intro';
   };
   attributes: {
-    description: Schema.Attribute.Text;
     desktopHero: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
@@ -340,9 +362,6 @@ export interface HomeIntro extends Struct.ComponentSchema {
       ['top-left', 'top-right', 'bottom-left', 'bottom-right']
     > &
       Schema.Attribute.DefaultTo<'top-left'>;
-    heading2: Schema.Attribute.String;
-    heading3: Schema.Attribute.String;
-    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
     mobileHero: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
@@ -767,6 +786,7 @@ declare module '@strapi/strapi' {
       'company.service-item': CompanyServiceItem;
       'company.services': CompanyServices;
       'company.team': CompanyTeam;
+      'contact.contact-configurator': ContactContactConfigurator;
       'contact.email': ContactEmail;
       'contact.error-messages': ContactErrorMessages;
       'contact.locations': ContactLocations;
@@ -778,6 +798,7 @@ declare module '@strapi/strapi' {
       'home.counter': HomeCounter;
       'home.counter-item': HomeCounterItem;
       'home.faq': HomeFaq;
+      'home.home-offering': HomeHomeOffering;
       'home.intro': HomeIntro;
       'home.metadata': HomeMetadata;
       'home.more-detials': HomeMoreDetials;

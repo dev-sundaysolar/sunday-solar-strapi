@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_home_home_offerings",
+  "info": {
+    "displayName": "homeOffering"
+  },
+  "options": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    },
+    "heading3": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
+    }
+  }
+}

@@ -21,7 +21,7 @@ export default factories.createCoreController(
       return populateCollection(
         strapi,
         "api::partner.partner",
-        "partners",
+        "partner",
         "showPartnersList",
         entity,
         sanitizedQueryParams

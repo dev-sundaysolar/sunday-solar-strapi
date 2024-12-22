@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_contact_contact_configurators",
+  "info": {
+    "displayName": "contactConfigurator"
+  },
+  "options": {},
+  "attributes": {
+    "heading1": {
+      "type": "string"
+    }
+  }
+}

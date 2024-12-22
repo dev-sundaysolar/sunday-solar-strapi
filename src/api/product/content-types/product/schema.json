@@ -48,7 +48,7 @@
         }
       }
     },
-    "information": {
+    "productBenefits": {
       "displayName": "information",
       "type": "component",
       "repeatable": false,
@@ -59,7 +59,7 @@
       },
       "component": "product.information"
     },
-    "features": {
+    "productSplit": {
       "displayName": "features",
       "type": "component",
       "repeatable": true,
@@ -81,7 +81,7 @@
       },
       "component": "product.faq"
     },
-    "projects": {
+    "productCards": {
       "displayName": "projects",
       "type": "component",
       "repeatable": false,

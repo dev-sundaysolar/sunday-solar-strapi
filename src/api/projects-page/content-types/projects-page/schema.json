@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "partners": {
+    "partner": {
       "displayName": "partners",
       "type": "component",
       "repeatable": false,
@@ -27,7 +27,7 @@
       },
       "component": "projects.partners"
     },
-    "projects": {
+    "projectCards": {
       "displayName": "projects",
       "type": "component",
       "repeatable": false,
@@ -38,7 +38,7 @@
       },
       "component": "projects.projects"
     },
-    "carousel": {
+    "projectsHeroSlider": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
