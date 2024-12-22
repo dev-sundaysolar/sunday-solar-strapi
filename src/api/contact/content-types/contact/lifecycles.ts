@@ -15,7 +15,7 @@ export default {
         to: result.email,
         from: env("DEFAULT_FROM_EMAIL"),
         subject: `Sunday Solar Support`,
-        text: `We receive your mail...`,
+        text: `We received your contact form`,
       });
     } catch (err) {
       console.log(err);

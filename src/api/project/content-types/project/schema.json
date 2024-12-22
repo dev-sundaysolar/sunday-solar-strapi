@@ -148,7 +148,7 @@
       },
       "type": "text"
     },
-    "projectId": {
+    "projectHashId": {
       "pluginOptions": {
         "i18n": {
           "localized": true
