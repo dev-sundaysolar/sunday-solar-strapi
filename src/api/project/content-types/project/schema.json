@@ -65,7 +65,7 @@
       "required": true,
       "targetField": "title"
     },
-    "moreDetails": {
+    "projectDetailProcess": {
       "displayName": "moreDetails",
       "type": "component",
       "repeatable": false,
@@ -76,7 +76,7 @@
       },
       "component": "projects.more-details"
     },
-    "processSteps": {
+    "projectDetailSplit": {
       "displayName": "processSteps",
       "type": "component",
       "repeatable": true,
@@ -87,7 +87,7 @@
       },
       "component": "projects.process-steps"
     },
-    "carousel": {
+    "projectDetailCarousel": {
       "displayName": "relatedProjects",
       "type": "component",
       "repeatable": false,

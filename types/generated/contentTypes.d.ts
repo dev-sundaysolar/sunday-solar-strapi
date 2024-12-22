@@ -1423,12 +1423,6 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    carousel: Schema.Attribute.Component<'projects.related-projects', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     carouselDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1509,13 +1503,28 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    moreDetails: Schema.Attribute.Component<'projects.more-details', false> &
+    projectDetailCarousel: Schema.Attribute.Component<
+      'projects.related-projects',
+      false
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    processSteps: Schema.Attribute.Component<'projects.process-steps', true> &
+    projectDetailProcess: Schema.Attribute.Component<
+      'projects.more-details',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    projectDetailSplit: Schema.Attribute.Component<
+      'projects.process-steps',
+      true
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

@@ -40,9 +40,9 @@ export default factories.createCoreController(
 
       const response = {
         ...sanitizedEntity,
-        carousel: {
-          ...sanitizedEntity?.carousel,
-          list: sanitizedEntity?.carousel?.showCarouselList
+        projectDetailCarousel: {
+          ...sanitizedEntity?.projectDetailCarousel,
+          list: sanitizedEntity?.projectDetailCarousel?.showCarouselList
             ? projectPageEntity?.projectsHeroSlider?.list.filter(
                 (item) => item.slug !== sanitizedEntity.slug
               ) ?? []
