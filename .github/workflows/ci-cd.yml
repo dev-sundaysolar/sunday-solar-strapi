@@ -1,0 +1,61 @@
+name: CI/CD Pipeline with Env Variables
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    environment: production
+
+    steps:
+      # Step 1: Check out the code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Create .env file from GitHub env
+      - name: Create .env file
+        run: |
+          echo -n "" > .env
+          echo "HOST=${{ vars.HOST }}" >> .env
+          echo "HOST=${{ vars.HOST }}" >> .env
+          echo "PORT=${{ vars.PORT }}" >> .env
+          echo "APP_KEYS=${{ vars.APP_KEYS }}" >> .env
+          echo "API_TOKEN_SALT=${{ vars.API_TOKEN_SALT }}" >> .env
+          echo "ADMIN_JWT_SECRET=${{ vars.ADMIN_JWT_SECRET }}" >> .env
+          echo "TRANSFER_TOKEN_SALT=${{ vars.TRANSFER_TOKEN_SALT }}" >> .env
+          echo "DATABASE_CLIENT=${{ vars.DATABASE_CLIENT }}" >> .env
+          echo "DATABASE_HOST=${{ vars.DATABASE_HOST }}" >> .env
+          echo "DATABASE_PORT=${{ vars.DATABASE_PORT }}" >> .env
+          echo "DATABASE_NAME=${{ vars.DATABASE_NAME }}" >> .env
+          echo "DATABASE_USERNAME=${{ vars.DATABASE_USERNAME }}" >> .env
+          echo "DATABASE_PASSWORD=${{ vars.DATABASE_PASSWORD }}" >> .env
+          echo "DATABASE_SSL=${{ vars.DATABASE_SSL }}" >> .env
+          echo "DATABASE_FILENAME=${{ vars.DATABASE_FILENAME }}" >> .env
+          echo "JWT_SECRET=${{ vars.JWT_SECRET }}" >> .env
+          echo "SMTP_PORT=${{ vars.SMTP_PORT }}" >> .env
+          echo "SMTP_SECURE=${{ vars.SMTP_SECURE }}" >> .env
+          echo "SMTP_USERNAME=${{ vars.SMTP_USERNAME }}" >> .env
+          echo "SMTP_PASSWORD=${{ vars.SMTP_PASSWORD }}" >> .env
+          echo "DEFAULT_TO_EMAIL=${{ vars.DEFAULT_TO_EMAIL }}" >> .env
+          echo "DEFAULT_FROM_EMAIL=${{ vars.DEFAULT_FROM_EMAIL }}" >> .env
+
+      # Step 3: Set up Node.js (or other tools based on your project)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      # Step 4: Install dependencies
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+
+      # Step 5: Build the project
+      - name: Build the Project
+        run: yarn build
+
+      # Step 6: Restart pm2
+      - name: Restart pm2
+        run: pm2 restart sunday-solar-strapi
