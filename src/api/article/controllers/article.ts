@@ -17,6 +17,11 @@ export default factories.createCoreController(
         slug,
         sanitizedQueryParams
       );
+
+      if (!article) {
+        return null;
+      }
+
       const sanitizedEntity = await this.sanitizeOutput(article, ctx);
 
       return this.transformResponse(sanitizedEntity);

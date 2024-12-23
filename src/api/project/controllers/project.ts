@@ -18,6 +18,10 @@ export default factories.createCoreController(
         sanitizedQueryParams
       );
 
+      if (!project) {
+        return null;
+      }
+
       const projectPageEntity = await strapi
         .documents("api::projects-page.projects-page")
         .findFirst({

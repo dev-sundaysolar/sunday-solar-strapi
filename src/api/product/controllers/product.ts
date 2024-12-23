@@ -11,19 +11,23 @@ export default factories.createCoreController(
     async findOne(ctx) {
       const sanitizedQueryParams = await this.sanitizeQuery(ctx);
       const { id: slug } = ctx.params;
-      const interview = await findBySlug(
+      const product = await findBySlug(
         strapi,
         "api::product.product",
         slug,
         sanitizedQueryParams
       );
 
+      if (!product) {
+        return null;
+      }
+
       const productPageEntity = await strapi
         .documents("api::product.product")
         .findMany(sanitizedQueryParams);
 
       const sanitizedEntity: Record<string, any> = await this.sanitizeOutput(
-        interview,
+        product,
         ctx
       );
 
