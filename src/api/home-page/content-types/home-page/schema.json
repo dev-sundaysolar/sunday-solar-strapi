@@ -71,7 +71,7 @@
         }
       }
     },
-    "review": {
+    "reviews": {
       "displayName": "Review",
       "type": "component",
       "repeatable": false,

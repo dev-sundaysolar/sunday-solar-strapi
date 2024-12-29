@@ -8,6 +8,17 @@
   "attributes": {
     "heading2": {
       "type": "string"
+    },
+    "readMore": {
+      "type": "string"
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
+    },
+    "topBoxTitle": {
+      "type": "string"
     }
   }
 }

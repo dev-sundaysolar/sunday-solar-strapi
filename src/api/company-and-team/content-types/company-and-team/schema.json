@@ -92,6 +92,16 @@
         }
       },
       "component": "company.locations"
+    },
+    "reviews": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.review"
     }
   }
 }

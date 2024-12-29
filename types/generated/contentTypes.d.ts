@@ -628,6 +628,12 @@ export interface ApiCompanyAndTeamCompanyAndTeam
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    reviews: Schema.Attribute.Component<'home.review', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -914,7 +920,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    review: Schema.Attribute.Component<'home.review', false> &
+    reviews: Schema.Attribute.Component<'home.review', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1599,6 +1605,12 @@ export interface ApiProjectsPageProjectsPage extends Struct.SingleTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    reviews: Schema.Attribute.Component<'home.review', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

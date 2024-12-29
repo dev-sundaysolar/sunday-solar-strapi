@@ -432,6 +432,9 @@ export interface HomeReview extends Struct.ComponentSchema {
   };
   attributes: {
     heading2: Schema.Attribute.String;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    readMore: Schema.Attribute.String;
+    topBoxTitle: Schema.Attribute.String;
   };
 }
 
