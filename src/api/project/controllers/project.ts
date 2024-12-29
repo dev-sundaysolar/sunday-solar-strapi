@@ -11,14 +11,14 @@ export default factories.createCoreController(
     async findOne(ctx) {
       const { id: slug } = ctx.params;
       const sanitizedQueryParams = await this.sanitizeQuery(ctx);
-      const project = await findBySlug(
+      const project: Record<string, any> = await findBySlug(
         strapi,
         "api::project.project",
         slug,
         sanitizedQueryParams
       );
 
-      if (!project) {
+      if (!project || !project?.hasDetailsPage) {
         return null;
       }
 
