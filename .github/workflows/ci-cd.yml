@@ -11,11 +11,28 @@ jobs:
     environment: production
 
     steps:
-      # Step 1: Check out the code
+      # Step 1: Backup assets
+      - name: Backup uploads directory
+        if: always()
+        run: |
+          if [ -d public/uploads ]; then
+            mkdir -p /tmp/runner-backups/uploads
+            cp -r public/uploads /tmp/runner-backups/uploads
+          fi
+      # Step 2: Check out the code
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2: Create .env file from GitHub env
+      # Step 3: Restore assets
+      - name: Restore uploads directory
+        if: always()
+        run: |
+          if [ -d /tmp/runner-backups/uploads ]; then
+            mkdir -p public/uploads
+            cp -r /tmp/runner-backups/uploads/* public/uploads/
+          fi
+
+      # Step 4: Create .env file from GitHub env
       - name: Create .env file
         run: |
           echo -n "" > .env
@@ -42,20 +59,20 @@ jobs:
           echo "DEFAULT_TO_EMAIL=${{ vars.DEFAULT_TO_EMAIL }}" >> .env
           echo "DEFAULT_FROM_EMAIL=${{ vars.DEFAULT_FROM_EMAIL }}" >> .env
 
-      # Step 3: Set up Node.js (or other tools based on your project)
+      # Step 5: Set up Node.js (or other tools based on your project)
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      # Step 4: Install dependencies
+      # Step 6: Install dependencies
       - name: Install Dependencies
         run: yarn --frozen-lockfile
 
-      # Step 5: Build the project
+      # Step 7: Build the project
       - name: Build the Project
         run: yarn build
 
-      # Step 6: Restart pm2
+      # Step 8: Restart pm2
       - name: Restart pm2
         run: pm2 restart sunday-solar-strapi
