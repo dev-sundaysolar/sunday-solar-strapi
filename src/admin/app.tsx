@@ -1,4 +1,6 @@
-import type { StrapiApp } from '@strapi/strapi/admin';
+import type { StrapiApp } from "@strapi/strapi/admin";
+// @ts-ignore
+import cropperjscss from "cropperjs/dist/cropper.css?raw";
 
 export default {
   config: {
@@ -32,6 +34,9 @@ export default {
     ],
   },
   bootstrap(app: StrapiApp) {
-    console.log(app);
+    const head = document.head || document.getElementsByTagName("head")[0];
+    const style = document.createElement("style");
+    style.innerHTML = cropperjscss;
+    head.appendChild(style);
   },
 };
