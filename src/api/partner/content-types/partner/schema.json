@@ -39,6 +39,14 @@
           "localized": true
         }
       }
+    },
+    "href": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

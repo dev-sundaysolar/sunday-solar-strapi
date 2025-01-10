@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_centers",
+  "info": {
+    "displayName": "center"
+  },
+  "options": {},
+  "attributes": {
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    }
+  }
+}

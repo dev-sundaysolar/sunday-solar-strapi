@@ -599,6 +599,17 @@ export interface ProjectsRelatedProjects extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCenter extends Struct.ComponentSchema {
+  collectionName: 'components_shared_centers';
+  info: {
+    displayName: 'center';
+  };
+  attributes: {
+    latitude: Schema.Attribute.String;
+    longitude: Schema.Attribute.String;
+  };
+}
+
 export interface SharedConcerns extends Struct.ComponentSchema {
   collectionName: 'components_shared_concerns';
   info: {
@@ -823,6 +834,7 @@ declare module '@strapi/strapi' {
       'projects.projects': ProjectsProjects;
       'projects.projects-table': ProjectsProjectsTable;
       'projects.related-projects': ProjectsRelatedProjects;
+      'shared.center': SharedCenter;
       'shared.concerns': SharedConcerns;
       'shared.faq-item': SharedFaqItem;
       'shared.link-button': SharedLinkButton;
