@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_top_marques",
+  "info": {
+    "displayName": "topMarquee",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "yellow",
+        "blue",
+        "backdrop"
+      ],
+      "default": "yellow"
+    },
+    "text": {
+      "type": "text"
+    },
+    "href": {
+      "type": "string",
+      "default": "/"
+    }
+  }
+}

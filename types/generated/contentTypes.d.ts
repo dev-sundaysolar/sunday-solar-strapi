@@ -1091,6 +1091,12 @@ export interface ApiLayoutLayout extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::layout.layout'>;
     publishedAt: Schema.Attribute.DateTime;
+    topMarquee: Schema.Attribute.Component<'shared.top-marque', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

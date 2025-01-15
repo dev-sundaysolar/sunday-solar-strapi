@@ -700,6 +700,20 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTopMarque extends Struct.ComponentSchema {
+  collectionName: 'components_shared_top_marques';
+  info: {
+    description: '';
+    displayName: 'topMarquee';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
+    text: Schema.Attribute.Text;
+    variant: Schema.Attribute.Enumeration<['yellow', 'blue', 'backdrop']> &
+      Schema.Attribute.DefaultTo<'yellow'>;
+  };
+}
+
 export interface UiButton extends Struct.ComponentSchema {
   collectionName: 'components_ui_buttons';
   info: {
@@ -846,6 +860,7 @@ declare module '@strapi/strapi' {
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.slider': SharedSlider;
+      'shared.top-marque': SharedTopMarque;
       'ui.button': UiButton;
       'ui.cookie-consent': UiCookieConsent;
       'ui.footer': UiFooter;
