@@ -15,7 +15,7 @@ export default factories.createCoreController(
         strapi,
         "api::project.project",
         slug,
-        sanitizedQueryParams
+        sanitizedQueryParams,
       );
 
       if (!project || !project?.hasDetailsPage) {
@@ -39,7 +39,7 @@ export default factories.createCoreController(
 
       const sanitizedEntity: Record<string, any> = await this.sanitizeOutput(
         project,
-        ctx
+        ctx,
       );
 
       const response = {
@@ -47,14 +47,14 @@ export default factories.createCoreController(
         projectDetailCarousel: {
           ...sanitizedEntity?.projectDetailCarousel,
           list: sanitizedEntity?.projectDetailCarousel?.showCarouselList
-            ? projectPageEntity?.projectsHeroSlider?.list.filter(
-                (item) => item.slug !== sanitizedEntity.slug
-              ) ?? []
+            ? (projectPageEntity?.projectsHeroSlider?.list.filter(
+                (item) => item.slug !== sanitizedEntity.slug,
+              ) ?? [])
             : null,
         },
       };
 
       return this.transformResponse(response);
     },
-  })
+  }),
 );

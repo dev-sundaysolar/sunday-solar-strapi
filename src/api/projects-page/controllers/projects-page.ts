@@ -8,15 +8,12 @@ import { populateCollection } from "../../../utils/populateCollection";
 export default factories.createCoreController(
   "api::projects-page.projects-page",
   ({ strapi }) => ({
-    // Override the `find` method
     async find(ctx) {
-      const { query } = ctx;
       const sanitizedQueryParams = await this.sanitizeQuery(ctx);
 
-      // Use the default service to fetch data
       const entity = await strapi
-        .service("api::projects-page.projects-page")
-        .find(query);
+        .documents("api::projects-page.projects-page")
+        .findFirst(sanitizedQueryParams);
 
       return populateCollection(
         strapi,
@@ -24,8 +21,8 @@ export default factories.createCoreController(
         "partner",
         "showPartnersList",
         entity,
-        sanitizedQueryParams
+        sanitizedQueryParams,
       );
     },
-  })
+  }),
 );
