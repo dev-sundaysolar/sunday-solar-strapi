@@ -358,7 +358,11 @@ export interface HomeIntro extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     heading1: Schema.Attribute.String;
-    heading1Position: Schema.Attribute.Enumeration<
+    heading1PositionDesktop: Schema.Attribute.Enumeration<
+      ['top-left', 'top-right', 'bottom-left', 'bottom-right']
+    > &
+      Schema.Attribute.DefaultTo<'top-left'>;
+    heading1PositionMobile: Schema.Attribute.Enumeration<
       ['top-left', 'top-right', 'bottom-left', 'bottom-right']
     > &
       Schema.Attribute.DefaultTo<'top-left'>;

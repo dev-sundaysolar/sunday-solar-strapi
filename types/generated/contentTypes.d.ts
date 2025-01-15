@@ -753,7 +753,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     publishedAt: Schema.Attribute.DateTime;
-    question: Schema.Attribute.String &
+    question: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1335,6 +1335,14 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    desktopHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     faq: Schema.Attribute.Component<'product.faq', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1347,7 +1355,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    hero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+    listHero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1358,6 +1366,14 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::product.product'
     >;
+    mobileHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     productBenefits: Schema.Attribute.Component<'product.information', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1442,6 +1458,12 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    desktopHero: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     faq: Schema.Attribute.Component<'home.faq', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1455,12 +1477,6 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.DefaultTo<false>;
-    hero: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -1471,6 +1487,12 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
         };
       }>;
     linkButton: Schema.Attribute.Component<'shared.link-button', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    listHero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1488,6 +1510,14 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
         };
       }>;
     longDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    mobileHero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
