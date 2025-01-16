@@ -30,7 +30,8 @@ export default factories.createCoreController(
             projectsHeroSlider: {
               populate: {
                 list: {
-                  populate: ["carouselHero", "linkButton"],
+                  populate: ["carouselHero"],
+                  sort: "updatedAt:desc",
                 },
               },
             },

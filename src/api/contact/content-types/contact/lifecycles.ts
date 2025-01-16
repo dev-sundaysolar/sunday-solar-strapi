@@ -5,6 +5,9 @@ export default {
     const { result } = event;
 
     if (result?.email && result?.content) {
+      if (result.publishedAt === null) {
+        return;
+      }
       try {
         await strapi.plugins["email"].services.email.send({
           to: env("DEFAULT_TO_EMAIL"),
