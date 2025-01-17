@@ -606,7 +606,8 @@ export interface ProjectsRelatedProjects extends Struct.ComponentSchema {
 export interface SharedCenter extends Struct.ComponentSchema {
   collectionName: 'components_shared_centers';
   info: {
-    displayName: 'center';
+    description: '';
+    displayName: 'mapCoordinates';
   };
   attributes: {
     latitude: Schema.Attribute.String;

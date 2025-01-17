@@ -32,22 +32,6 @@
       },
       "type": "text"
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "phoneNumber": {
       "pluginOptions": {
         "i18n": {
@@ -67,7 +51,7 @@
       },
       "component": "shared.link-button"
     },
-    "center": {
+    "mapCoordinates": {
       "displayName": "center",
       "type": "component",
       "repeatable": false,

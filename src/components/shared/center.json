@@ -1,7 +1,8 @@
 {
   "collectionName": "components_shared_centers",
   "info": {
-    "displayName": "center"
+    "displayName": "mapCoordinates",
+    "description": ""
   },
   "options": {},
   "attributes": {

@@ -528,37 +528,6 @@ export interface ApiB2BPageB2BPage extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
-  collectionName: 'categories';
-  info: {
-    description: 'Organize your content into categories';
-    displayName: 'Category';
-    pluralName: 'categories';
-    singularName: 'category';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiCompanyAndTeamCompanyAndTeam
   extends Struct.SingleTypeSchema {
   collectionName: 'company_and_teams';
@@ -1126,22 +1095,10 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    center: Schema.Attribute.Component<'shared.center', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     heading3: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1158,6 +1115,12 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::location.location'
     >;
+    mapCoordinates: Schema.Attribute.Component<'shared.center', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     phoneNumber: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2214,7 +2177,6 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::b2b-page.b2b-page': ApiB2BPageB2BPage;
-      'api::category.category': ApiCategoryCategory;
       'api::company-and-team.company-and-team': ApiCompanyAndTeamCompanyAndTeam;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
       'api::contact.contact': ApiContactContact;
