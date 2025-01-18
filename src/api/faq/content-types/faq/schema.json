@@ -36,14 +36,13 @@
       "type": "text",
       "required": true
     },
-    "answer": {
+    "answerContent": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "text",
-      "required": true
+      "type": "blocks"
     }
   }
 }

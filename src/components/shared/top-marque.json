@@ -21,6 +21,10 @@
     "href": {
       "type": "string",
       "default": "/"
+    },
+    "showMarquee": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

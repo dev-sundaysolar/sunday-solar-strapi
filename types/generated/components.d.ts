@@ -709,6 +709,7 @@ export interface SharedTopMarque extends Struct.ComponentSchema {
   };
   attributes: {
     href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
+    showMarquee: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     text: Schema.Attribute.Text;
     variant: Schema.Attribute.Enumeration<['yellow', 'blue', 'backdrop']> &
       Schema.Attribute.DefaultTo<'yellow'>;
