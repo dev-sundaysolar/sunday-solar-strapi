@@ -18,7 +18,7 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": false,
+      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -31,12 +31,13 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "desktopHero": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
@@ -114,7 +115,8 @@
           "localized": true
         }
       },
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "type": {
       "pluginOptions": {
@@ -224,14 +226,15 @@
       }
     },
     "listHero": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true

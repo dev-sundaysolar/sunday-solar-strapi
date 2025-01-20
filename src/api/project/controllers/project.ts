@@ -31,7 +31,6 @@ export default factories.createCoreController(
               populate: {
                 list: {
                   populate: ["carouselHero"],
-                  sort: "updatedAt:desc",
                 },
               },
             },
