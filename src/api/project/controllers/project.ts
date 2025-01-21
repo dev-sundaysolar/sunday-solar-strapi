@@ -22,6 +22,21 @@ export default factories.createCoreController(
         return null;
       }
 
+      const anotherLocaleParams = {
+        locale: !sanitizedQueryParams?.locale
+          ? "en"
+          : sanitizedQueryParams?.locale === "de-DE"
+            ? "en"
+            : "de-DE",
+      };
+
+      const anotherLocaleProject: Record<string, any> = await strapi
+        .documents("api::project.project")
+        .findOne({
+          documentId: project.documentId,
+          locale: anotherLocaleParams.locale,
+        });
+
       const projectPageEntity = await strapi
         .documents("api::projects-page.projects-page")
         .findFirst({
@@ -44,6 +59,7 @@ export default factories.createCoreController(
 
       const response = {
         ...sanitizedEntity,
+        anotherLocaleSlug: anotherLocaleProject?.slug,
         projectDetailCarousel: {
           ...sanitizedEntity?.projectDetailCarousel,
           list: sanitizedEntity?.projectDetailCarousel?.showCarouselList

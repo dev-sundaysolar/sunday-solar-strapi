@@ -15,12 +15,27 @@ export default factories.createCoreController(
         strapi,
         "api::product.product",
         slug,
-        sanitizedQueryParams
+        sanitizedQueryParams,
       );
 
       if (!product) {
         return null;
       }
+
+      const anotherLocaleParams = {
+        locale: !sanitizedQueryParams?.locale
+          ? "en"
+          : sanitizedQueryParams?.locale === "de-DE"
+            ? "en"
+            : "de-DE",
+      };
+
+      const anotherLocaleProject: Record<string, any> = await strapi
+        .documents("api::product.product")
+        .findOne({
+          documentId: product.documentId,
+          locale: anotherLocaleParams.locale,
+        });
 
       const productPageEntity = await strapi
         .documents("api::product.product")
@@ -28,22 +43,23 @@ export default factories.createCoreController(
 
       const sanitizedEntity: Record<string, any> = await this.sanitizeOutput(
         product,
-        ctx
+        ctx,
       );
 
       const response = {
         ...sanitizedEntity,
+        anotherLocaleSlug: anotherLocaleProject?.slug,
         productCards: {
           ...sanitizedEntity?.productCards,
           list: sanitizedEntity?.productCards?.showProductList
-            ? productPageEntity?.filter(
-                (item) => item.slug !== sanitizedEntity.slug
-              ) ?? []
+            ? (productPageEntity?.filter(
+                (item) => item.slug !== sanitizedEntity.slug,
+              ) ?? [])
             : null,
         },
       };
 
       return this.transformResponse(response);
     },
-  })
+  }),
 );
