@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "b2_b_configurator_pages",
+  "info": {
+    "singularName": "b2-b-configurator-page",
+    "pluralName": "b2-b-configurator-pages",
+    "displayName": "B2B Configurator Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "heading1": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

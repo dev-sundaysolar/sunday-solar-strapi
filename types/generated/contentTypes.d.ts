@@ -451,6 +451,45 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiB2BConfiguratorPageB2BConfiguratorPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'b2_b_configurator_pages';
+  info: {
+    description: '';
+    displayName: 'B2B Configurator Page';
+    pluralName: 'b2-b-configurator-pages';
+    singularName: 'b2-b-configurator-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading1: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::b2-b-configurator-page.b2-b-configurator-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiB2BPageB2BPage extends Struct.SingleTypeSchema {
   collectionName: 'b2b_pages';
   info: {
@@ -603,6 +642,44 @@ export interface ApiCompanyAndTeamCompanyAndTeam
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactConfiguratorPageContactConfiguratorPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'contact_configurator_pages';
+  info: {
+    displayName: 'Contact Configurator Page';
+    pluralName: 'contact-configurator-pages';
+    singularName: 'contact-configurator-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading1: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-configurator-page.contact-configurator-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2184,8 +2261,10 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::b2-b-configurator-page.b2-b-configurator-page': ApiB2BConfiguratorPageB2BConfiguratorPage;
       'api::b2b-page.b2b-page': ApiB2BPageB2BPage;
       'api::company-and-team.company-and-team': ApiCompanyAndTeamCompanyAndTeam;
+      'api::contact-configurator-page.contact-configurator-page': ApiContactConfiguratorPageContactConfiguratorPage;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
       'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;
