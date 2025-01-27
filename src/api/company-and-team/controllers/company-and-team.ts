@@ -6,7 +6,7 @@ import { factories } from "@strapi/strapi";
 import { populateCollection } from "../../../utils/populateCollection";
 
 export default factories.createCoreController(
-  "api::company-and-team.company-and-team"
+  "api::company-and-team.company-and-team",
 );
 
 module.exports = factories.createCoreController(
@@ -14,13 +14,12 @@ module.exports = factories.createCoreController(
   ({ strapi }) => ({
     // Override the `find` method
     async find(ctx) {
-      const { query } = ctx;
       const sanitizedQueryParams = await this.sanitizeQuery(ctx);
 
       // Use the default service to fetch data
       const entity = await strapi
-        .service("api::company-and-team.company-and-team")
-        .find(query);
+        .documents("api::company-and-team.company-and-team")
+        .findFirst(sanitizedQueryParams);
 
       return populateCollection(
         strapi,
@@ -28,8 +27,8 @@ module.exports = factories.createCoreController(
         "partner",
         "showPartnersList",
         entity,
-        sanitizedQueryParams
+        sanitizedQueryParams,
       );
     },
-  })
+  }),
 );
