@@ -4,7 +4,8 @@
   "info": {
     "singularName": "contact-configurator-page",
     "pluralName": "contact-configurator-pages",
-    "displayName": "Contact Configurator Page"
+    "displayName": "Contact Configurator Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,6 +23,16 @@
         }
       },
       "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo"
     }
   }
 }

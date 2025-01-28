@@ -1,4 +1,7 @@
 export default ({ env }) => ({
+  seo: {
+    enabled: true,
+  },
   email: {
     config: {
       provider: "nodemailer",

@@ -8,6 +8,39 @@ import { findBySlug } from "../../../utils/findBySlug";
 export default factories.createCoreController(
   "api::product.product",
   ({ strapi }) => ({
+    async find(ctx) {
+      const sanitizedQueryParams = await this.sanitizeQuery(ctx);
+
+      const projects: Record<string, any> = await strapi
+        .documents("api::product.product")
+        .findMany(sanitizedQueryParams);
+
+      const anotherLocaleParams = {
+        locale: !sanitizedQueryParams?.locale
+          ? "en"
+          : sanitizedQueryParams?.locale === "de-DE"
+            ? "en"
+            : "de-DE",
+      };
+
+      const anotherLocaleProduct: Record<string, any> = await strapi
+        .documents("api::product.product")
+        .findMany({
+          locale: anotherLocaleParams.locale,
+        });
+
+      const updatedProducts = projects.map((product) => {
+        return {
+          ...product,
+          anotherLocaleSlug:
+            anotherLocaleProduct?.find(
+              (item) => item.documentId === product.documentId,
+            )?.slug ?? product?.slug,
+        };
+      });
+
+      return this.transformResponse(updatedProducts);
+    },
     async findOne(ctx) {
       const sanitizedQueryParams = await this.sanitizeQuery(ctx);
       const { id: slug } = ctx.params;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "t-and-c-page",
     "pluralName": "t-and-c-pages",
-    "displayName": "T&C Page"
+    "displayName": "T&C Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -30,6 +31,16 @@
         }
       },
       "type": "blocks"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo"
     }
   }
 }

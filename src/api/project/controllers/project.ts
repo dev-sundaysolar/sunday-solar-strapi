@@ -8,6 +8,39 @@ import { findBySlug } from "../../../utils/findBySlug";
 export default factories.createCoreController(
   "api::project.project",
   ({ strapi }) => ({
+    async find(ctx) {
+      const sanitizedQueryParams = await this.sanitizeQuery(ctx);
+
+      const projects: Record<string, any> = await strapi
+        .documents("api::project.project")
+        .findMany(sanitizedQueryParams);
+
+      const anotherLocaleParams = {
+        locale: !sanitizedQueryParams?.locale
+          ? "en"
+          : sanitizedQueryParams?.locale === "de-DE"
+            ? "en"
+            : "de-DE",
+      };
+
+      const anotherLocaleProject: Record<string, any> = await strapi
+        .documents("api::project.project")
+        .findMany({
+          locale: anotherLocaleParams.locale,
+        });
+
+      const updatedProjects = projects.map((project) => {
+        return {
+          ...project,
+          anotherLocaleSlug:
+            anotherLocaleProject?.find(
+              (item) => item.documentId === project.documentId,
+            )?.slug ?? project?.slug,
+        };
+      });
+
+      return this.transformResponse(updatedProjects);
+    },
     async findOne(ctx) {
       const { id: slug } = ctx.params;
       const sanitizedQueryParams = await this.sanitizeQuery(ctx);

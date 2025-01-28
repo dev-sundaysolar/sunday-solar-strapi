@@ -4,7 +4,8 @@
   "info": {
     "singularName": "not-found-page",
     "pluralName": "not-found-pages",
-    "displayName": "Not Found Page"
+    "displayName": "Not Found Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -40,6 +41,16 @@
         }
       },
       "component": "shared.link-button"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo"
     }
   }
 }
