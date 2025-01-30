@@ -1,14 +1,63 @@
 import { env } from "@strapi/utils";
 
-const emailTemplate = {
-  subject: "Vielen Dank für Ihre Nachricht.",
+const englishHtml = `<div class="container">
+        <div class="header">
+            <h2>Thank you for your message.</h2>
+        </div>
+        <div class="content">
+            <p>We have received your request and will review it as soon as possible.
+.</p>
+            <p>For urgent matters, you can also reach us at the phone number <strong>030 / 515 659950</strong>.</p>
+        </div>
+        <div class="image-container">
+        <picture>
+    <source
+    srcset="https://api.sundaysolar.de/uploads/dark_email_logo_2b9ac144cc.png"
+    media="(prefers-color-scheme: dark)"
+  />
+    <img src="https://api.sundaysolar.de/uploads/email_logo_58a05b474d.png" alt="Company Logo">
+</picture>
+        </div>
+        <div class="footer">
+            <p>With sunny regards,</p>
+            <p><strong>Sunday Solar GmbH</strong><br>Bürgerstraße 17<br>12347 Berlin</p>
+        </div>
+    </div>`;
+
+const germanyHtml = `<div class="container">
+        <div class="header">
+            <h2>Vielen Dank für Ihre Nachricht</h2>
+        </div>
+        <div class="content">
+            <p>Wir haben Ihre Anfrage erhalten und werden diese so schnell wie möglich prüfen.</p>
+            <p>Für dringende Anliegen stehen wir Ihnen auch unter der Telefonnummer <strong>030 / 515 659950</strong> zur Verfügung.</p>
+        </div>
+        <div class="image-container">
+        <picture>
+    <source
+    srcset="https://api.sundaysolar.de/uploads/dark_email_logo_2b9ac144cc.png"
+    media="(prefers-color-scheme: dark)"
+  />
+    <img src="https://api.sundaysolar.de/uploads/email_logo_58a05b474d.png" alt="Company Logo">
+</picture>
+        </div>
+        <div class="footer">
+            <p>Mit sonnigen Grüßen</p>
+            <p><strong>Sunday Solar GmbH</strong><br>Bürgerstraße 17<br>12347 Berlin</p>
+        </div>
+    </div>`;
+
+const emailTemplate = (locale) => ({
+  subject:
+    locale === "en"
+      ? "Thank you for your message."
+      : "Vielen Dank für Ihre Nachricht.",
   text: "",
   html: `<!DOCTYPE html>
-<html lang="en">
+<html lang=${locale === "en" ? "en" : "de"}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Template</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,33 +90,13 @@ const emailTemplate = {
             max-width: 150px;
         }
     </style>
+    <title>Email Template</title>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h2>Vielen Dank für Ihre Nachricht</h2>
-        </div>
-        <div class="content">
-            <p>Wir haben Ihre Anfrage erhalten und werden diese so schnell wie möglich prüfen.</p>
-            <p>Für dringende Anliegen stehen wir Ihnen auch unter der Telefonnummer <strong>030 / 515 659950</strong> zur Verfügung.</p>
-        </div>
-        <div class="image-container">
-        <picture>
-  <source
-    srcset="https://api.sundaysolar.de/uploads/dark_email_logo_2b9ac144cc.png"
-    media="(prefers-color-scheme: dark)"
-  />
-           <img src="https://api.sundaysolar.de/uploads/email_logo_58a05b474d.png" alt="Company Logo">
-</picture>
-        </div>
-        <div class="footer">
-            <p>Mit sonnigen Grüßen</p>
-            <p><strong>Sunday Solar GmbH</strong><br>Bürgerstraße 17<br>12347 Berlin</p>
-        </div>
-    </div>
+    ${locale === "en" ? englishHtml : germanyHtml}
 </body>
 </html>`,
-};
+});
 
 export default {
   async afterCreate(event) {
@@ -89,14 +118,8 @@ export default {
             to: result.email,
             from: env("DEFAULT_FROM_EMAIL"),
           },
-          emailTemplate,
+          emailTemplate(result.locale),
         );
-        // await strapi.plugins["email"].services.email.send({
-        //   to: result.email,
-        //   from: env("DEFAULT_FROM_EMAIL"),
-        //   subject: `Sunday Solar Support`,
-        //   text: `We received your contact form`,
-        // });
       } catch (err) {
         console.log(err);
       }
