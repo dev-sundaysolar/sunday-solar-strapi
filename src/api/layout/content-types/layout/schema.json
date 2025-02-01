@@ -59,6 +59,14 @@
         }
       },
       "component": "shared.top-marque"
+    },
+    "cookieBannerScript": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }

@@ -10,13 +10,11 @@ const englishHtml = `<div class="container">
             <p>For urgent matters, you can also reach us at the phone number <strong>030 / 515 659950</strong>.</p>
         </div>
         <div class="image-container">
-        <picture>
-    <source
-    srcset="https://api.sundaysolar.de/uploads/dark_email_logo_2b9ac144cc.png"
-    media="(prefers-color-scheme: dark)"
-  />
-    <img src="https://api.sundaysolar.de/uploads/email_logo_58a05b474d.png" alt="Company Logo">
-</picture>
+            <img src="https://api.sundaysolar.de/uploads/Sonne_Verlauf_1c4d03c0f5.png" alt="Company Logo">
+            <div class="logo-text-container">
+                <p class="logo-text">sunday</p>
+                <p class="logo-text">solar</p>
+            </div>
         </div>
         <div class="footer">
             <p>With sunny regards,</p>
@@ -33,13 +31,11 @@ const germanyHtml = `<div class="container">
             <p>Für dringende Anliegen stehen wir Ihnen auch unter der Telefonnummer <strong>030 / 515 659950</strong> zur Verfügung.</p>
         </div>
         <div class="image-container">
-        <picture>
-    <source
-    srcset="https://api.sundaysolar.de/uploads/dark_email_logo_2b9ac144cc.png"
-    media="(prefers-color-scheme: dark)"
-  />
-    <img src="https://api.sundaysolar.de/uploads/email_logo_58a05b474d.png" alt="Company Logo">
-</picture>
+            <img src="https://api.sundaysolar.de/uploads/Sonne_Verlauf_1c4d03c0f5.png" alt="Company Logo">
+            <div class="logo-text-container">
+                <p class="logo-text">sunday</p>
+                <p class="logo-text">solar</p>
+            </div>
         </div>
         <div class="footer">
             <p>Mit sonnigen Grüßen</p>
@@ -85,9 +81,15 @@ const emailTemplate = (locale) => ({
         }
         .image-container {
             margin: 20px 0;
+            display: flex;
+            align-items: center;
         }
         .image-container img {
-            max-width: 150px;
+            max-width: 73px;
+        }
+        .logo-text {
+            font-size: 30px;
+            margin: 0 !important;
         }
     </style>
     <title>Email Template</title>
