@@ -1,6 +1,6 @@
 {
   "name": "sunday-solar-strapi",
-  "version": "0.5.9",
+  "version": "0.6.0",
   "private": true,
   "description": "A Strapi application",
   "scripts": {
