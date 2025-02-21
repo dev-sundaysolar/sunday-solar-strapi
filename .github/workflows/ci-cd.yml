@@ -61,7 +61,7 @@ jobs:
           echo "BACKUP_BUCKET_NAME=${{ vars.BACKUP_BUCKET_NAME }}" >> .env
           echo "SERVICE_ACCOUNT_PROJECT_ID=${{ vars.SERVICE_ACCOUNT_PROJECT_ID }}" >> .env
           echo "SERVICE_ACCOUNT_PRIVATE_KEY_ID=${{ vars.SERVICE_ACCOUNT_PRIVATE_KEY_ID }}" >> .env
-          echo "SERVICE_ACCOUNT_PRIVATE_KEY=${{ vars.SERVICE_ACCOUNT_PRIVATE_KEY }}" >> .env
+          printf 'SERVICE_ACCOUNT_PRIVATE_KEY="%s"\n' "${{ vars.SERVICE_ACCOUNT_PRIVATE_KEY }}" >> .env
           echo "SERVICE_ACCOUNT_CLIENT_EMAIL=${{ vars.SERVICE_ACCOUNT_CLIENT_EMAIL }}" >> .env
           echo "SERVICE_ACCOUNT_CLIENT_ID=${{ vars.SERVICE_ACCOUNT_CLIENT_ID }}" >> .env
           
