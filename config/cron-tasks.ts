@@ -131,8 +131,8 @@ export default {
     options: {
       // rule: "*/5 * * * * *", // every 5 seconds
       // rule: "* * * * *", // every minute
-      // rule: "0 3 * * 1", // every monday at 3am
-      rule: "*/5 * * * *", // every 5 minutes
+      rule: "0 3 * * 1", // every monday at 3am
+      // rule: "*/5 * * * *", // every 5 minutes
     },
   },
 };
