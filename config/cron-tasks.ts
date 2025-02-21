@@ -21,9 +21,7 @@ async function uploadFile(filename: string) {
       .bucket(process.env.BACKUP_BUCKET_NAME)
       .upload(filename);
 
-    console.log(
-      `File uploaded successfully! File ID: ${JSON.stringify(file, null, 2)}`
-    );
+    console.log(`File uploaded successfully! File ID: ${file.name}`);
   } catch (error) {
     console.error("Error uploading file:", error.message);
   }
@@ -36,7 +34,6 @@ function runCommandWithInput() {
 
     const child = spawn(command, args, { stdio: "pipe" });
 
-    // Listen for output from the command
     child.stdout.on("data", (data) => {
       if (data.includes("Please enter an encryption key")) {
         child.stdin.write(process.env.STRAPI_BACKUP_PASSWORD + "\n");
@@ -48,20 +45,6 @@ function runCommandWithInput() {
       resolve(true);
     });
 
-    child.stdout.on("close", (data) => {
-      console.log("on end", data);
-    });
-
-    // Handle errors
-    child.stderr.on("data", (data) => {
-      console.error(`Error: ${data}`);
-    });
-
-    child.on("message", (message) => {
-      console.log(message, "message");
-    });
-
-    // Check when the process exits
     child.on("close", (code) => {
       if (code === 0) {
         resolve(true);
@@ -113,26 +96,26 @@ function findLatestBackup() {
 
 async function getBackup() {
   try {
+    console.log("Get Backup is called!");
     await removePrevBackups();
+    console.log("Removed previous backups!");
     await runCommandWithInput();
     const latestBackup = await findLatestBackup();
+    console.log("Latest Backup:", latestBackup);
     await uploadFile(latestBackup);
   } catch (e) {
-    console.log("Get Backup Error:", e.message);
+    console.error("Get Backup Error:", e.message);
   }
 }
 
 export default {
   backupEveryMondayAt3AM: {
-    task: () => {
-      console.log("CRON JOB is here!");
-      getBackup();
-    },
+    task: () => getBackup(),
     options: {
       // rule: "*/5 * * * * *", // every 5 seconds
       // rule: "* * * * *", // every minute
-      rule: "0 3 * * 1", // every monday at 3am
-      // rule: "*/5 * * * *", // every 5 minutes
+      // rule: "0 3 * * 1", // every monday at 3am
+      rule: "*/5 * * * *", // every 5 minutes
     },
   },
 };
