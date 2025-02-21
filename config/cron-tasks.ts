@@ -109,13 +109,13 @@ async function getBackup() {
 }
 
 export default {
-  backupEveryMondayAt3AM: {
+  backupEverySundayAt3AM: {
     task: () => getBackup(),
     options: {
       // rule: "*/5 * * * * *", // every 5 seconds
       // rule: "* * * * *", // every minute
-      // rule: "0 3 * * 1", // every monday at 3am
-      rule: "*/5 * * * *", // every 5 minutes
+      rule: "0 3 * * 0", // every sunday at 3am
+      // rule: "*/5 * * * *", // every 5 minutes
     },
   },
 };
