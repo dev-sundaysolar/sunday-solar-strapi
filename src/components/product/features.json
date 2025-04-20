@@ -22,6 +22,11 @@
         "videos",
         "audios"
       ]
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
     }
   }
 }

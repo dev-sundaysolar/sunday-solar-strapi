@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_campaign_campaign_discounts",
+  "info": {
+    "displayName": "campaignDiscount",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "amount": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

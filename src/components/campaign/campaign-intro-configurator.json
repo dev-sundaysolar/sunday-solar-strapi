@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_campaign_campaign_intro_configurators",
+  "info": {
+    "displayName": "campaignIntroConfigurator"
+  },
+  "options": {},
+  "attributes": {
+    "heading1": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}

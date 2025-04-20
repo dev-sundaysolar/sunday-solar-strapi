@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaigns",
+  "info": {
+    "singularName": "campaign",
+    "pluralName": "campaigns",
+    "displayName": "Campaign",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "campaignIntro": {
+      "displayName": "campaignIntro",
+      "type": "component",
+      "repeatable": false,
+      "component": "campaign.campaign-intro",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "reviews": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.review"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.features"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.partners"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
+    },
+    "offering": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-offering"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.faq"
+    }
+  }
+}
