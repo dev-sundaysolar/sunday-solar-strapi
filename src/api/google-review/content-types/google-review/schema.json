@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "google_reviews",
+  "info": {
+    "singularName": "google-review",
+    "pluralName": "google-reviews",
+    "displayName": "Google Review"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "fullname": {
+      "type": "string",
+      "required": true
+    },
+    "review": {
+      "type": "text",
+      "required": true
+    },
+    "stars": {
+      "type": "decimal",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
