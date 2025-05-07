@@ -39,10 +39,10 @@
       "repeatable": false,
       "component": "shared.link-button"
     },
-    "uiType": {
+    "heroUI": {
       "type": "enumeration",
       "enum": [
-        "normal",
+        "full-width",
         "split"
       ],
       "required": true
