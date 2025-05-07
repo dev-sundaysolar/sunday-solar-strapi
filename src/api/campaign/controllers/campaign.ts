@@ -45,6 +45,7 @@ export default factories.createCoreController(
 
       const response = {
         ...sanitizedEntity,
+        reviews: campaign.reviews,
         anotherLocaleSlug: anotherLocaleCampaign?.slug,
       };
 

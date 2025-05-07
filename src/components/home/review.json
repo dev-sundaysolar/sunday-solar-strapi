@@ -20,7 +20,12 @@
     "topBoxTitle": {
       "type": "string"
     },
-    "google_reviews": {
+    "stars": {
+      "type": "decimal",
+      "min": 0,
+      "max": 5
+    },
+    "googleReviews": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::google-review.google-review"

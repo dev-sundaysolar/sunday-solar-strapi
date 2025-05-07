@@ -4,7 +4,8 @@
   "info": {
     "singularName": "google-review",
     "pluralName": "google-reviews",
-    "displayName": "Google Review"
+    "displayName": "Google Review",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,19 +18,39 @@
   "attributes": {
     "fullname": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "review": {
       "type": "text",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "stars": {
       "type": "decimal",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "link": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
