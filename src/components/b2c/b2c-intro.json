@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_b2c_b2c_intros",
+  "info": {
+    "displayName": "b2cIntro",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading1": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

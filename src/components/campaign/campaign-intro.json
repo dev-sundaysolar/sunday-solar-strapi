@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_campaign_campaign_intros",
+  "info": {
+    "displayName": "campaignIntro",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "campaignIntroHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "campaign.campaign-intro-hero"
+    },
+    "campaignIntroConfigurator": {
+      "type": "component",
+      "repeatable": false,
+      "component": "campaign.campaign-intro-configurator"
+    },
+    "campaignIntroDiscount": {
+      "type": "component",
+      "repeatable": false,
+      "component": "campaign.campaign-discount"
+    },
+    "campaignType": {
+      "type": "enumeration",
+      "enum": [
+        "configurator",
+        "hero"
+      ],
+      "required": true
+    }
+  }
+}

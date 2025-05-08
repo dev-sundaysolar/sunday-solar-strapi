@@ -19,6 +19,22 @@
     },
     "topBoxTitle": {
       "type": "string"
+    },
+    "stars": {
+      "type": "decimal",
+      "min": 0,
+      "max": 5,
+      "required": true
+    },
+    "googleReviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::google-review.google-review"
+    },
+    "totalReviews": {
+      "type": "integer",
+      "min": 0,
+      "required": true
     }
   }
 }

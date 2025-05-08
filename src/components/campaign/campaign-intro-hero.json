@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_campaign_campaign_intro_heroes",
+  "info": {
+    "displayName": "campaignIntroHero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading1": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "heroDesktop": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heroMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link-button"
+    },
+    "heroUI": {
+      "type": "enumeration",
+      "enum": [
+        "full-width",
+        "split"
+      ],
+      "required": true
+    }
+  }
+}
