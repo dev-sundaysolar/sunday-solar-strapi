@@ -27,6 +27,9 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.link-button"
+    },
+    "richTextDescription": {
+      "type": "blocks"
     }
   }
 }

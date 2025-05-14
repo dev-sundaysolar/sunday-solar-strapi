@@ -51,7 +51,7 @@
         }
       }
     },
-    "features": {
+    "featureSplits": {
       "type": "component",
       "repeatable": true,
       "component": "product.features",

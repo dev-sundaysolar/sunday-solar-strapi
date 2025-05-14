@@ -6,17 +6,17 @@
   },
   "options": {},
   "attributes": {
-    "campaignIntroHero": {
+    "generalAdIntro": {
       "type": "component",
       "repeatable": false,
       "component": "campaign.campaign-intro-hero"
     },
-    "campaignIntroConfigurator": {
+    "configuratorAdIntro": {
       "type": "component",
       "repeatable": false,
       "component": "campaign.campaign-intro-configurator"
     },
-    "campaignIntroDiscount": {
+    "discountSticker": {
       "type": "component",
       "repeatable": false,
       "component": "campaign.campaign-discount"
@@ -24,8 +24,8 @@
     "campaignType": {
       "type": "enumeration",
       "enum": [
-        "configurator",
-        "hero"
+        "generalAd",
+        "configuratorAd"
       ],
       "required": true
     }
