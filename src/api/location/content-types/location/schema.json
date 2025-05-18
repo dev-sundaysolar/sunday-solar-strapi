@@ -61,6 +61,14 @@
         }
       },
       "component": "shared.center"
+    },
+    "cookieRejectedMessage": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
