@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_campaign_campaign_projects",
+  "info": {
+    "displayName": "campaignProjects"
+  },
+  "options": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    },
+    "projectCarousel": {
+      "type": "component",
+      "repeatable": true,
+      "component": "projects.projects"
+    }
+  }
+}

@@ -1,7 +1,8 @@
 {
   "collectionName": "components_campaign_campaign_intro_configurators",
   "info": {
-    "displayName": "campaignIntroConfigurator"
+    "displayName": "campaignIntroConfigurator",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,6 +11,13 @@
     },
     "description": {
       "type": "blocks"
+    },
+    "product": {
+      "type": "enumeration",
+      "enum": [
+        "energyhouse",
+        "energycompany"
+      ]
     }
   }
 }

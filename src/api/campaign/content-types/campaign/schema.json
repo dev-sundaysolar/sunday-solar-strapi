@@ -71,11 +71,6 @@
         }
       }
     },
-    "projects": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::project.project"
-    },
     "offering": {
       "type": "component",
       "repeatable": false,
@@ -95,6 +90,11 @@
           "localized": true
         }
       }
+    },
+    "projects": {
+      "type": "component",
+      "repeatable": false,
+      "component": "projects.projects"
     }
   }
 }
