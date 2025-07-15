@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_campaign_configurators",
+  "info": {
+    "displayName": "configurator"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "configurator": {
+      "type": "enumeration",
+      "enum": [
+        "B2B",
+        "B2C",
+        "Contact"
+      ]
+    }
+  },
+  "config": {}
+}
